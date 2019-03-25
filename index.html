@@ -229,6 +229,250 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/lc-Longest-substring-without-repeating-characters/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/25/lc-Longest-substring-without-repeating-characters/" itemprop="url">lc-Longest substring without repeating characters</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T20:38:55+08:00">
+                2019-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="3-Longest-substring-without-repeating-characters"><a href="#3-Longest-substring-without-repeating-characters" class="headerlink" title="3.Longest substring without repeating characters"></a>3.Longest substring without repeating characters</h1><h2 id="方法一基本思想：动态规划。dp-i-是指以s-i-结尾的字符串的lcs。初始dp-i-1-dp-i-的值为从s-i-1-开始往前遍历dp-i-1-个字符，若中途遍历到某个字符与s-i-相等了则跳出循环。若往前遍历了tmp-从0开始-个字符，则dp-i-tmp。"><a href="#方法一基本思想：动态规划。dp-i-是指以s-i-结尾的字符串的lcs。初始dp-i-1-dp-i-的值为从s-i-1-开始往前遍历dp-i-1-个字符，若中途遍历到某个字符与s-i-相等了则跳出循环。若往前遍历了tmp-从0开始-个字符，则dp-i-tmp。" class="headerlink" title="方法一基本思想：动态规划。dp[i]是指以s[i]结尾的字符串的lcs。初始dp[i]=1;dp[i]的值为从s[i-1]开始往前遍历dp[i-1]个字符，若中途遍历到某个字符与s[i]相等了则跳出循环。若往前遍历了tmp(从0开始)个字符，则dp[i] += tmp。"></a>方法一基本思想：动态规划。dp[i]是指以s[i]结尾的字符串的lcs。初始dp[i]=1;dp[i]的值为从s[i-1]开始往前遍历dp[i-1]个字符，若中途遍历到某个字符与s[i]相等了则跳出循环。若往前遍历了tmp(从0开始)个字符，则dp[i] += tmp。</h2><h3 id="时间复杂度o-n"><a href="#时间复杂度o-n" class="headerlink" title="时间复杂度o(n)"></a>时间复杂度o(n)</h3><h3 id="空间复杂度o-n"><a href="#空间复杂度o-n" class="headerlink" title="空间复杂度o(n)"></a>空间复杂度o(n)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int lengthOfLongestSubstring(string s) &#123;</span><br><span class="line">        int size=s.size();</span><br><span class="line">        if(size==0) return 0;</span><br><span class="line">        int *dp=new int[size];</span><br><span class="line">        for(int i=0;i&lt;size;i++) dp[i]=1;</span><br><span class="line">        int max=1;</span><br><span class="line">        for(int i=1;i&lt;size;i++)&#123;</span><br><span class="line">            int k;</span><br><span class="line">            int j=dp[i-1];</span><br><span class="line">            for( k=0;k&lt;j;k++)&#123;</span><br><span class="line">                if(s[i-k-1]==s[i]) break;</span><br><span class="line">            &#125;</span><br><span class="line">            dp[i]=k+1;</span><br><span class="line">            max=dp[i]&gt;max?dp[i]:max;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="方法二基本思想：窗口法。mp-i-记录了s-i-在数组中的位置。初始为-1-left-i-表示滑动窗口，窗口内的字符都是无重复的。left和i初始值都为0，并且按照如下步骤循环："><a href="#方法二基本思想：窗口法。mp-i-记录了s-i-在数组中的位置。初始为-1-left-i-表示滑动窗口，窗口内的字符都是无重复的。left和i初始值都为0，并且按照如下步骤循环：" class="headerlink" title="方法二基本思想：窗口法。mp[i]记录了s[i]在数组中的位置。初始为-1.[left,i]表示滑动窗口，窗口内的字符都是无重复的。left和i初始值都为0，并且按照如下步骤循环："></a>方法二基本思想：窗口法。mp[i]记录了s[i]在数组中的位置。初始为-1.[left,i]表示滑动窗口，窗口内的字符都是无重复的。left和i初始值都为0，并且按照如下步骤循环：</h2><blockquote>
+<p>1.设当前字符为c。如果mp[c]&gt;=left,则说明这个字符c是第二次出现在窗口中。那么left移动到上一个c的下一个位置，更新res。<br>2.否则，mp[c]=i；</p>
+</blockquote>
+<h3 id="时间复杂度o-n-n"><a href="#时间复杂度o-n-n" class="headerlink" title="时间复杂度o(n*n)"></a>时间复杂度o(n*n)</h3><h3 id="空间复杂度o-n-1"><a href="#空间复杂度o-n-1" class="headerlink" title="空间复杂度o(n)"></a>空间复杂度o(n)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int lengthOfLongestSubstring(string s) &#123;</span><br><span class="line">        int size=s.size();</span><br><span class="line">        if(size==0) return 0;</span><br><span class="line">         vector&lt;int&gt;mp(128, -1);</span><br><span class="line">         int left=0,i=0,res=0;</span><br><span class="line">         for(;i&lt;size;i++)&#123;</span><br><span class="line">             char c=s[i];</span><br><span class="line">             if(mp[c]&gt;=left)&#123;</span><br><span class="line">                 res=max(res,i-left);</span><br><span class="line">                 left=mp[c]+1;</span><br><span class="line">             &#125;</span><br><span class="line">             mp[c]=i;</span><br><span class="line">         &#125;</span><br><span class="line">         return max(res,i-left);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/lc-add two nums/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/25/lc-add two nums/" itemprop="url">lc-add two nums</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T19:56:39+08:00">
+                2019-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="2-add-two-numbers"><a href="#2-add-two-numbers" class="headerlink" title="2.add two numbers"></a>2.add two numbers</h1><h2 id="基本思想：从低位加到高位，"><a href="#基本思想：从低位加到高位，" class="headerlink" title="基本思想：从低位加到高位，"></a>基本思想：从低位加到高位，</h2><h3 id="时间复杂度o-n"><a href="#时间复杂度o-n" class="headerlink" title="时间复杂度o(n)"></a>时间复杂度o(n)</h3><h3 id="空间复杂度o-n"><a href="#空间复杂度o-n" class="headerlink" title="空间复杂度o(n)"></a>空间复杂度o(n)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * struct ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode *next;</span><br><span class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">private:</span><br><span class="line">    int digital_add(int x,int y,int &amp;carry)&#123;</span><br><span class="line">        int t=x+y+carry;</span><br><span class="line">        if(t&gt;=10) &#123;</span><br><span class="line">            carry=1;</span><br><span class="line">            t-=10;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            carry=0;</span><br><span class="line">        &#125;</span><br><span class="line">        return t;</span><br><span class="line">    &#125;</span><br><span class="line">public:</span><br><span class="line">    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</span><br><span class="line">        int carry=0,temp;</span><br><span class="line">        ListNode *p=new ListNode(digital_add(l1-&gt;val,l2-&gt;val,carry));</span><br><span class="line">        ListNode *h=p;</span><br><span class="line">        l1=l1-&gt;next;l2=l2-&gt;next;</span><br><span class="line">        while(l1&amp;&amp;l2)&#123;</span><br><span class="line">            h-&gt;next=new ListNode(digital_add(l1-&gt;val,l2-&gt;val,carry));</span><br><span class="line">            h=h-&gt;next;</span><br><span class="line">            l1=l1-&gt;next;l2=l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        if(l1==NULL&amp;&amp;l2==NULL&amp;&amp;carry==1) &#123;</span><br><span class="line">          h-&gt;next=new ListNode(1);</span><br><span class="line">        &#125;</span><br><span class="line">        if(l1)&#123;</span><br><span class="line">            h-&gt;next=l1;</span><br><span class="line">            while(l1)&#123;</span><br><span class="line">                l1-&gt;val=digital_add(l1-&gt;val,0,carry);</span><br><span class="line">                l1=l1-&gt;next;</span><br><span class="line">                h=h-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(l2)&#123;</span><br><span class="line">            h-&gt;next=l2;</span><br><span class="line">            while(l2)&#123;</span><br><span class="line">                l2-&gt;val=digital_add(l2-&gt;val,0,carry);</span><br><span class="line">                l2=l2-&gt;next;</span><br><span class="line">                h=h-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(carry) h-&gt;next=new ListNode(1);</span><br><span class="line">        return p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/lc-twosum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -510,7 +754,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
