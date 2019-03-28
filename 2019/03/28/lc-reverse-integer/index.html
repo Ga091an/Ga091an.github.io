@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="6.zigzag conversion基本思想：找周期t=2*numRows-2;对称性；时间复杂度o(n)空间复杂度o(1)12345678910111213141516171819202122class Solution &amp;#123;public:    string convert(string s, int numRows) &amp;#123;        if(numRows==1) ret">
+<meta name="description" content="7.Reverse Integer基本思想：a.100 -&amp;gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。123456789101112131415class Solution &amp;#123;public:    int reverse(int x) &amp;#123;        int res=0,temp=x;">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lc-ZigZag conversion">
-<meta property="og:url" content="http://yoursite.com/2019/03/27/lc-ZigZag-conversion/index.html">
+<meta property="og:title" content="lc-reverse integer">
+<meta property="og:url" content="http://yoursite.com/2019/03/28/lc-reverse-integer/index.html">
 <meta property="og:site_name" content="谦的bolg">
-<meta property="og:description" content="6.zigzag conversion基本思想：找周期t=2*numRows-2;对称性；时间复杂度o(n)空间复杂度o(1)12345678910111213141516171819202122class Solution &amp;#123;public:    string convert(string s, int numRows) &amp;#123;        if(numRows==1) ret">
+<meta property="og:description" content="7.Reverse Integer基本思想：a.100 -&amp;gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。123456789101112131415class Solution &amp;#123;public:    int reverse(int x) &amp;#123;        int res=0,temp=x;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-27T02:38:54.895Z">
+<meta property="og:updated_time" content="2019-03-28T14:09:09.365Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lc-ZigZag conversion">
-<meta name="twitter:description" content="6.zigzag conversion基本思想：找周期t=2*numRows-2;对称性；时间复杂度o(n)空间复杂度o(1)12345678910111213141516171819202122class Solution &amp;#123;public:    string convert(string s, int numRows) &amp;#123;        if(numRows==1) ret">
+<meta name="twitter:title" content="lc-reverse integer">
+<meta name="twitter:description" content="7.Reverse Integer基本思想：a.100 -&amp;gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。123456789101112131415class Solution &amp;#123;public:    int reverse(int x) &amp;#123;        int res=0,temp=x;">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/27/lc-ZigZag-conversion/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/28/lc-reverse-integer/">
 
 
 
 
 
-  <title>lc-ZigZag conversion | 谦的bolg</title>
+  <title>lc-reverse integer | 谦的bolg</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/lc-ZigZag-conversion/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/lc-reverse-integer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GQ">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">lc-ZigZag conversion</h1>
+          <h1 class="post-title" itemprop="name headline">lc-reverse integer</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T10:35:21+08:00">
-                2019-03-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T22:06:05+08:00">
+                2019-03-28
               </time>
             
 
@@ -300,8 +300,7 @@
       
 
       
-        <h1 id="6-zigzag-conversion"><a href="#6-zigzag-conversion" class="headerlink" title="6.zigzag conversion"></a>6.zigzag conversion</h1><h2 id="基本思想：找周期t-2-numRows-2-对称性；"><a href="#基本思想：找周期t-2-numRows-2-对称性；" class="headerlink" title="基本思想：找周期t=2*numRows-2;对称性；"></a>基本思想：找周期t=2*numRows-2;对称性；</h2><h2 id="时间复杂度o-n"><a href="#时间复杂度o-n" class="headerlink" title="时间复杂度o(n)"></a>时间复杂度o(n)</h2><h2 id="空间复杂度o-1"><a href="#空间复杂度o-1" class="headerlink" title="空间复杂度o(1)"></a>空间复杂度o(1)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string convert(string s, int numRows) &#123;</span><br><span class="line">        if(numRows==1) return s;</span><br><span class="line">        int t=2*numRows-2;</span><br><span class="line">        string str=&quot;&quot;;</span><br><span class="line">        for(int i=0;i&lt;numRows;i++)&#123;</span><br><span class="line">            int pos1=i,pos2=t-i;</span><br><span class="line">            while(1)&#123;</span><br><span class="line">                if(pos1&gt;=s.size()) break;</span><br><span class="line">                str+=s[pos1];</span><br><span class="line">                pos1+=t;</span><br><span class="line">                if(i!=0&amp;&amp;i!=numRows-1)&#123;</span><br><span class="line">                    if(pos2&gt;=s.size()) break;</span><br><span class="line">                    str+=s[pos2];</span><br><span class="line">                    pos2+=t;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            return str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="7-Reverse-Integer"><a href="#7-Reverse-Integer" class="headerlink" title="7.Reverse Integer"></a>7.Reverse Integer</h1><h2 id="基本思想：a-100-gt-1-b-注意溢出（只能是-−2-31-2-31-−-1-即-2147483648-2147483647-。"><a href="#基本思想：a-100-gt-1-b-注意溢出（只能是-−2-31-2-31-−-1-即-2147483648-2147483647-。" class="headerlink" title="基本思想：a.100 -&gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。"></a>基本思想：a.100 -&gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int reverse(int x) &#123;</span><br><span class="line">        int res=0,temp=x;</span><br><span class="line">        while(temp)&#123;</span><br><span class="line">            if(abs(res)&gt;INT_MAX/10) return 0;</span><br><span class="line">            if(abs(res)==INT_MAX/10)&#123;</span><br><span class="line">                if(temp==-9||temp==8) return 0;</span><br><span class="line">            &#125;</span><br><span class="line">                res=res*10+temp%10;</span><br><span class="line">                temp/=10;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -331,8 +330,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/26/lc-longest-palindromic-substring/" rel="next" title="lc-longest palindromic substring">
-                <i class="fa fa-chevron-left"></i> lc-longest palindromic substring
+              <a href="/2019/03/27/lc-ZigZag-conversion/" rel="next" title="lc-ZigZag conversion">
+                <i class="fa fa-chevron-left"></i> lc-ZigZag conversion
               </a>
             
           </div>
@@ -340,10 +339,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/28/lc-reverse-integer/" rel="prev" title="lc-reverse integer">
-                lc-reverse integer <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -466,7 +461,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#6-zigzag-conversion"><span class="nav-number">1.</span> <span class="nav-text">6.zigzag conversion</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本思想：找周期t-2-numRows-2-对称性；"><span class="nav-number">1.1.</span> <span class="nav-text">基本思想：找周期t=2*numRows-2;对称性；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度o-n"><span class="nav-number">1.2.</span> <span class="nav-text">时间复杂度o(n)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间复杂度o-1"><span class="nav-number">1.3.</span> <span class="nav-text">空间复杂度o(1)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Reverse-Integer"><span class="nav-number">1.</span> <span class="nav-text">7.Reverse Integer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本思想：a-100-gt-1-b-注意溢出（只能是-−2-31-2-31-−-1-即-2147483648-2147483647-。"><span class="nav-number">1.1.</span> <span class="nav-text">基本思想：a.100 -&gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。</span></a></li></ol></li></ol></div>
             
 
           </div>
