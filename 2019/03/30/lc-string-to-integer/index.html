@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="2.add two numbers基本思想：从低位加到高位，时间复杂度o(n)空间复杂度o(n)12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455/** * Definition for singly-linked list. * struct L">
+<meta name="description" content="8.string to integer基本思想：去空格-&amp;gt;判断符号-&amp;gt;转换。注意有些小坑点12345678910111213141516171819202122232425262728293031323334353637class Solution &amp;#123;private:    int CharToInt(const char c)&amp;#123;        //char转换为i">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lc-add two nums">
-<meta property="og:url" content="http://yoursite.com/2019/03/25/lc-add two nums/index.html">
+<meta property="og:title" content="lc-string to integer">
+<meta property="og:url" content="http://yoursite.com/2019/03/30/lc-string-to-integer/index.html">
 <meta property="og:site_name" content="谦的bolg">
-<meta property="og:description" content="2.add two numbers基本思想：从低位加到高位，时间复杂度o(n)空间复杂度o(n)12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455/** * Definition for singly-linked list. * struct L">
+<meta property="og:description" content="8.string to integer基本思想：去空格-&amp;gt;判断符号-&amp;gt;转换。注意有些小坑点12345678910111213141516171819202122232425262728293031323334353637class Solution &amp;#123;private:    int CharToInt(const char c)&amp;#123;        //char转换为i">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-25T14:42:20.374Z">
+<meta property="og:updated_time" content="2019-03-30T02:43:42.672Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lc-add two nums">
-<meta name="twitter:description" content="2.add two numbers基本思想：从低位加到高位，时间复杂度o(n)空间复杂度o(n)12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455/** * Definition for singly-linked list. * struct L">
+<meta name="twitter:title" content="lc-string to integer">
+<meta name="twitter:description" content="8.string to integer基本思想：去空格-&amp;gt;判断符号-&amp;gt;转换。注意有些小坑点12345678910111213141516171819202122232425262728293031323334353637class Solution &amp;#123;private:    int CharToInt(const char c)&amp;#123;        //char转换为i">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/25/lc-add two nums/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/30/lc-string-to-integer/">
 
 
 
 
 
-  <title>lc-add two nums | 谦的bolg</title>
+  <title>lc-string to integer | 谦的bolg</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/lc-add two nums/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/lc-string-to-integer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GQ">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">lc-add two nums</h1>
+          <h1 class="post-title" itemprop="name headline">lc-string to integer</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T19:56:39+08:00">
-                2019-03-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-30T10:38:10+08:00">
+                2019-03-30
               </time>
             
 
@@ -300,8 +300,7 @@
       
 
       
-        <h1 id="2-add-two-numbers"><a href="#2-add-two-numbers" class="headerlink" title="2.add two numbers"></a>2.add two numbers</h1><h2 id="基本思想：从低位加到高位，"><a href="#基本思想：从低位加到高位，" class="headerlink" title="基本思想：从低位加到高位，"></a>基本思想：从低位加到高位，</h2><h3 id="时间复杂度o-n"><a href="#时间复杂度o-n" class="headerlink" title="时间复杂度o(n)"></a>时间复杂度o(n)</h3><h3 id="空间复杂度o-n"><a href="#空间复杂度o-n" class="headerlink" title="空间复杂度o(n)"></a>空间复杂度o(n)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * struct ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode *next;</span><br><span class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">private:</span><br><span class="line">    int digital_add(int x,int y,int &amp;carry)&#123;</span><br><span class="line">        int t=x+y+carry;</span><br><span class="line">        if(t&gt;=10) &#123;</span><br><span class="line">            carry=1;</span><br><span class="line">            t-=10;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            carry=0;</span><br><span class="line">        &#125;</span><br><span class="line">        return t;</span><br><span class="line">    &#125;</span><br><span class="line">public:</span><br><span class="line">    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</span><br><span class="line">        int carry=0,temp;</span><br><span class="line">        ListNode *p=new ListNode(digital_add(l1-&gt;val,l2-&gt;val,carry));</span><br><span class="line">        ListNode *h=p;</span><br><span class="line">        l1=l1-&gt;next;l2=l2-&gt;next;</span><br><span class="line">        while(l1&amp;&amp;l2)&#123;</span><br><span class="line">            h-&gt;next=new ListNode(digital_add(l1-&gt;val,l2-&gt;val,carry));</span><br><span class="line">            h=h-&gt;next;</span><br><span class="line">            l1=l1-&gt;next;l2=l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        if(l1==NULL&amp;&amp;l2==NULL&amp;&amp;carry==1) &#123;</span><br><span class="line">          h-&gt;next=new ListNode(1);</span><br><span class="line">        &#125;</span><br><span class="line">        if(l1)&#123;</span><br><span class="line">            h-&gt;next=l1;</span><br><span class="line">            while(l1)&#123;</span><br><span class="line">                l1-&gt;val=digital_add(l1-&gt;val,0,carry);</span><br><span class="line">                l1=l1-&gt;next;</span><br><span class="line">                h=h-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(l2)&#123;</span><br><span class="line">            h-&gt;next=l2;</span><br><span class="line">            while(l2)&#123;</span><br><span class="line">                l2-&gt;val=digital_add(l2-&gt;val,0,carry);</span><br><span class="line">                l2=l2-&gt;next;</span><br><span class="line">                h=h-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(carry) h-&gt;next=new ListNode(1);</span><br><span class="line">        return p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="8-string-to-integer"><a href="#8-string-to-integer" class="headerlink" title="8.string to integer"></a>8.string to integer</h1><h2 id="基本思想：去空格-gt-判断符号-gt-转换。注意有些小坑点"><a href="#基本思想：去空格-gt-判断符号-gt-转换。注意有些小坑点" class="headerlink" title="基本思想：去空格-&gt;判断符号-&gt;转换。注意有些小坑点"></a>基本思想：去空格-&gt;判断符号-&gt;转换。注意有些小坑点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">private:</span><br><span class="line">    int CharToInt(const char c)&#123;</span><br><span class="line">        //char转换为int</span><br><span class="line">        //如果不是‘0’-‘9’，那么返回-1</span><br><span class="line">         if(c&gt;=&apos;0&apos;&amp;&amp;c&lt;=&apos;9&apos;) return (c-&apos;0&apos;);</span><br><span class="line">         else return -1;</span><br><span class="line">    &#125;</span><br><span class="line">public:</span><br><span class="line">    int myAtoi(string str) &#123;</span><br><span class="line">        long long res=0;</span><br><span class="line">        int len=str.size(),i=0,ispositive=1;</span><br><span class="line">        int s[33],p=-1;</span><br><span class="line">        int j=0;</span><br><span class="line">        //去除空格</span><br><span class="line">        while(i&lt;len&amp;&amp;(str[i]==&apos; &apos;)) i++;</span><br><span class="line">        if(str[i]==&apos;-&apos;) &#123;</span><br><span class="line">            ispositive=0;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        else if(str[i]==&apos;+&apos;) i++;</span><br><span class="line">        while(i&lt;len&amp;&amp;str[i]==&apos;0&apos;) i++;</span><br><span class="line">        while(i&lt;len)&#123;</span><br><span class="line">            int c=CharToInt(str[i++]);</span><br><span class="line">            if(c!=-1)&#123;</span><br><span class="line">                res=res*10+c;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            //此处有坑点：判断溢出要放在while里，一旦出现溢出就要返回结果</span><br><span class="line">            if(ispositive==1&amp;&amp;res&gt;INT_MAX) return INT_MAX;</span><br><span class="line">            if(ispositive==0&amp;&amp;-res&lt;INT_MIN) return INT_MIN;</span><br><span class="line">        &#125;</span><br><span class="line">        return ispositive==1?res:-res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -331,8 +330,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/23/lc-twosum/" rel="next" title="lc-two sum">
-                <i class="fa fa-chevron-left"></i> lc-two sum
+              <a href="/2019/03/28/lc-reverse-integer/" rel="next" title="lc-reverse integer">
+                <i class="fa fa-chevron-left"></i> lc-reverse integer
               </a>
             
           </div>
@@ -340,10 +339,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/25/lc-Longest-substring-without-repeating-characters/" rel="prev" title="lc-Longest substring without repeating characters">
-                lc-Longest substring without repeating characters <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -466,7 +461,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2-add-two-numbers"><span class="nav-number">1.</span> <span class="nav-text">2.add two numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本思想：从低位加到高位，"><span class="nav-number">1.1.</span> <span class="nav-text">基本思想：从低位加到高位，</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度o-n"><span class="nav-number">1.1.1.</span> <span class="nav-text">时间复杂度o(n)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间复杂度o-n"><span class="nav-number">1.1.2.</span> <span class="nav-text">空间复杂度o(n)</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#8-string-to-integer"><span class="nav-number">1.</span> <span class="nav-text">8.string to integer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本思想：去空格-gt-判断符号-gt-转换。注意有些小坑点"><span class="nav-number">1.1.</span> <span class="nav-text">基本思想：去空格-&gt;判断符号-&gt;转换。注意有些小坑点</span></a></li></ol></li></ol></div>
             
 
           </div>
