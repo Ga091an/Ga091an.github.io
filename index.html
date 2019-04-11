@@ -229,6 +229,126 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/lc-3Sum-Closest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/11/lc-3Sum-Closest/" itemprop="url">lc-3Sum Closest</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-11T21:10:58+08:00">
+                2019-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="16-3Sum-Closest"><a href="#16-3Sum-Closest" class="headerlink" title="16.3Sum Closest"></a>16.3Sum Closest</h1><h2 id="先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。"><a href="#先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。" class="headerlink" title="先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。"></a>先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。</h2><h2 id="时间复杂度o-n-2"><a href="#时间复杂度o-n-2" class="headerlink" title="时间复杂度o(n^2)"></a>时间复杂度o(n^2)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int threeSumClosest(vector&lt;int&gt;&amp; nums, int target) &#123;</span><br><span class="line">        long long sum=nums[0]+nums[1]+nums[2],min_gap,curr_gap,res;</span><br><span class="line">        int size=nums.size();</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        min_gap=abs(target-sum);</span><br><span class="line">        for(int i=0;i&lt;size-2;i++)&#123;</span><br><span class="line">            int low=i+1,high=size-1;</span><br><span class="line">            while(low&lt;high)&#123;</span><br><span class="line">                sum=nums[i]+nums[low]+nums[high];</span><br><span class="line">                curr_gap=abs(target-sum);</span><br><span class="line">                if(curr_gap&lt;=min_gap)&#123;</span><br><span class="line">                    res=sum;</span><br><span class="line">                    min_gap=curr_gap;</span><br><span class="line">                &#125;</span><br><span class="line">                if(sum&lt;target) low++;</span><br><span class="line">                else if(sum&gt;target) high--;</span><br><span class="line">                else return target;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/lc-3Sum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1302,126 +1422,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/lc-add two nums/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/25/lc-add two nums/" itemprop="url">lc-add two nums</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T19:56:39+08:00">
-                2019-03-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="2-add-two-numbers"><a href="#2-add-two-numbers" class="headerlink" title="2.add two numbers"></a>2.add two numbers</h1><h2 id="基本思想：从低位加到高位，"><a href="#基本思想：从低位加到高位，" class="headerlink" title="基本思想：从低位加到高位，"></a>基本思想：从低位加到高位，</h2><h3 id="时间复杂度o-n"><a href="#时间复杂度o-n" class="headerlink" title="时间复杂度o(n)"></a>时间复杂度o(n)</h3><h3 id="空间复杂度o-n"><a href="#空间复杂度o-n" class="headerlink" title="空间复杂度o(n)"></a>空间复杂度o(n)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * struct ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode *next;</span><br><span class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">private:</span><br><span class="line">    int digital_add(int x,int y,int &amp;carry)&#123;</span><br><span class="line">        int t=x+y+carry;</span><br><span class="line">        if(t&gt;=10) &#123;</span><br><span class="line">            carry=1;</span><br><span class="line">            t-=10;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            carry=0;</span><br><span class="line">        &#125;</span><br><span class="line">        return t;</span><br><span class="line">    &#125;</span><br><span class="line">public:</span><br><span class="line">    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</span><br><span class="line">        int carry=0,temp;</span><br><span class="line">        ListNode *p=new ListNode(digital_add(l1-&gt;val,l2-&gt;val,carry));</span><br><span class="line">        ListNode *h=p;</span><br><span class="line">        l1=l1-&gt;next;l2=l2-&gt;next;</span><br><span class="line">        while(l1&amp;&amp;l2)&#123;</span><br><span class="line">            h-&gt;next=new ListNode(digital_add(l1-&gt;val,l2-&gt;val,carry));</span><br><span class="line">            h=h-&gt;next;</span><br><span class="line">            l1=l1-&gt;next;l2=l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        if(l1==NULL&amp;&amp;l2==NULL&amp;&amp;carry==1) &#123;</span><br><span class="line">          h-&gt;next=new ListNode(1);</span><br><span class="line">        &#125;</span><br><span class="line">        if(l1)&#123;</span><br><span class="line">            h-&gt;next=l1;</span><br><span class="line">            while(l1)&#123;</span><br><span class="line">                l1-&gt;val=digital_add(l1-&gt;val,0,carry);</span><br><span class="line">                l1=l1-&gt;next;</span><br><span class="line">                h=h-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(l2)&#123;</span><br><span class="line">            h-&gt;next=l2;</span><br><span class="line">            while(l2)&#123;</span><br><span class="line">                l2-&gt;val=digital_add(l2-&gt;val,0,carry);</span><br><span class="line">                l2=l2-&gt;next;</span><br><span class="line">                h=h-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(carry) h-&gt;next=new ListNode(1);</span><br><span class="line">        return p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1472,7 +1472,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>

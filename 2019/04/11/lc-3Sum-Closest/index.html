@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="7.Reverse Integer基本思想：a.100 -&amp;gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。123456789101112131415class Solution &amp;#123;public:    int reverse(int x) &amp;#123;        int res=0,temp=x;">
+<meta name="description" content="16.3Sum Closest先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。时间复杂度o(n^2)123456789101112131415161718192021222324class Solution &amp;#123;public:    int threeSumClosest(vector&amp;lt;int&amp;gt;&amp;a">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lc-reverse integer">
-<meta property="og:url" content="http://yoursite.com/2019/03/28/lc-reverse-integer/index.html">
+<meta property="og:title" content="lc-3Sum Closest">
+<meta property="og:url" content="http://yoursite.com/2019/04/11/lc-3Sum-Closest/index.html">
 <meta property="og:site_name" content="谦的bolg">
-<meta property="og:description" content="7.Reverse Integer基本思想：a.100 -&amp;gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。123456789101112131415class Solution &amp;#123;public:    int reverse(int x) &amp;#123;        int res=0,temp=x;">
+<meta property="og:description" content="16.3Sum Closest先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。时间复杂度o(n^2)123456789101112131415161718192021222324class Solution &amp;#123;public:    int threeSumClosest(vector&amp;lt;int&amp;gt;&amp;a">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-28T14:09:09.365Z">
+<meta property="og:updated_time" content="2019-04-11T13:14:22.161Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lc-reverse integer">
-<meta name="twitter:description" content="7.Reverse Integer基本思想：a.100 -&amp;gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。123456789101112131415class Solution &amp;#123;public:    int reverse(int x) &amp;#123;        int res=0,temp=x;">
+<meta name="twitter:title" content="lc-3Sum Closest">
+<meta name="twitter:description" content="16.3Sum Closest先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。时间复杂度o(n^2)123456789101112131415161718192021222324class Solution &amp;#123;public:    int threeSumClosest(vector&amp;lt;int&amp;gt;&amp;a">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/28/lc-reverse-integer/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/11/lc-3Sum-Closest/">
 
 
 
 
 
-  <title>lc-reverse integer | 谦的bolg</title>
+  <title>lc-3Sum Closest | 谦的bolg</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/28/lc-reverse-integer/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/lc-3Sum-Closest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GQ">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">lc-reverse integer</h1>
+          <h1 class="post-title" itemprop="name headline">lc-3Sum Closest</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-28T22:06:05+08:00">
-                2019-03-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-11T21:10:58+08:00">
+                2019-04-11
               </time>
             
 
@@ -300,7 +300,8 @@
       
 
       
-        <h1 id="7-Reverse-Integer"><a href="#7-Reverse-Integer" class="headerlink" title="7.Reverse Integer"></a>7.Reverse Integer</h1><h2 id="基本思想：a-100-gt-1-b-注意溢出（只能是-−2-31-2-31-−-1-即-2147483648-2147483647-。"><a href="#基本思想：a-100-gt-1-b-注意溢出（只能是-−2-31-2-31-−-1-即-2147483648-2147483647-。" class="headerlink" title="基本思想：a.100 -&gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。"></a>基本思想：a.100 -&gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int reverse(int x) &#123;</span><br><span class="line">        int res=0,temp=x;</span><br><span class="line">        while(temp)&#123;</span><br><span class="line">            if(abs(res)&gt;INT_MAX/10) return 0;</span><br><span class="line">            if(abs(res)==INT_MAX/10)&#123;</span><br><span class="line">                if(temp==-9||temp==8) return 0;</span><br><span class="line">            &#125;</span><br><span class="line">                res=res*10+temp%10;</span><br><span class="line">                temp/=10;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h1 id="16-3Sum-Closest"><a href="#16-3Sum-Closest" class="headerlink" title="16.3Sum Closest"></a>16.3Sum Closest</h1><h2 id="先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。"><a href="#先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。" class="headerlink" title="先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。"></a>先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。</h2><h2 id="时间复杂度o-n-2"><a href="#时间复杂度o-n-2" class="headerlink" title="时间复杂度o(n^2)"></a>时间复杂度o(n^2)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int threeSumClosest(vector&lt;int&gt;&amp; nums, int target) &#123;</span><br><span class="line">        long long sum=nums[0]+nums[1]+nums[2],min_gap,curr_gap,res;</span><br><span class="line">        int size=nums.size();</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        min_gap=abs(target-sum);</span><br><span class="line">        for(int i=0;i&lt;size-2;i++)&#123;</span><br><span class="line">            int low=i+1,high=size-1;</span><br><span class="line">            while(low&lt;high)&#123;</span><br><span class="line">                sum=nums[i]+nums[low]+nums[high];</span><br><span class="line">                curr_gap=abs(target-sum);</span><br><span class="line">                if(curr_gap&lt;=min_gap)&#123;</span><br><span class="line">                    res=sum;</span><br><span class="line">                    min_gap=curr_gap;</span><br><span class="line">                &#125;</span><br><span class="line">                if(sum&lt;target) low++;</span><br><span class="line">                else if(sum&gt;target) high--;</span><br><span class="line">                else return target;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -330,8 +331,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/27/lc-ZigZag-conversion/" rel="next" title="lc-ZigZag conversion">
-                <i class="fa fa-chevron-left"></i> lc-ZigZag conversion
+              <a href="/2019/04/10/lc-3Sum/" rel="next" title="lc-3Sum">
+                <i class="fa fa-chevron-left"></i> lc-3Sum
               </a>
             
           </div>
@@ -339,10 +340,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/30/lc-string-to-integer/" rel="prev" title="lc-string to integer">
-                lc-string to integer <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -465,7 +462,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Reverse-Integer"><span class="nav-number">1.</span> <span class="nav-text">7.Reverse Integer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本思想：a-100-gt-1-b-注意溢出（只能是-−2-31-2-31-−-1-即-2147483648-2147483647-。"><span class="nav-number">1.1.</span> <span class="nav-text">基本思想：a.100 -&gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#16-3Sum-Closest"><span class="nav-number">1.</span> <span class="nav-text">16.3Sum Closest</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。"><span class="nav-number">1.1.</span> <span class="nav-text">先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度o-n-2"><span class="nav-number">1.2.</span> <span class="nav-text">时间复杂度o(n^2)</span></a></li></ol></li></ol></div>
             
 
           </div>
