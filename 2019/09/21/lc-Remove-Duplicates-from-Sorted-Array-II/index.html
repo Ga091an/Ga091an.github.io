@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="15.3Sum法一：固定一个数，从而转化为2Sum。时间复杂度o(n^2) 空间复杂度o(123456789101112131415161718192021class Solution &amp;#123;public:    vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; threeSum(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;        int le">
+<meta name="description" content="26.Remove Duplicates from Sorted Array两个指针。j指示待插入位置，i寻找插入元素。ct指示i遇到的重复元素。time:o(n)space:o(1)1234567891011121314class Solution &amp;#123;public:    int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lc-3Sum">
-<meta property="og:url" content="http://yoursite.com/2019/04/10/lc-3Sum/index.html">
+<meta property="og:title" content="Remove Duplicates from Sorted Array II">
+<meta property="og:url" content="http://yoursite.com/2019/09/21/lc-Remove-Duplicates-from-Sorted-Array-II/index.html">
 <meta property="og:site_name" content="谦的bolg">
-<meta property="og:description" content="15.3Sum法一：固定一个数，从而转化为2Sum。时间复杂度o(n^2) 空间复杂度o(123456789101112131415161718192021class Solution &amp;#123;public:    vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; threeSum(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;        int le">
+<meta property="og:description" content="26.Remove Duplicates from Sorted Array两个指针。j指示待插入位置，i寻找插入元素。ct指示i遇到的重复元素。time:o(n)space:o(1)1234567891011121314class Solution &amp;#123;public:    int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-10T13:10:11.776Z">
+<meta property="og:updated_time" content="2019-09-21T01:43:29.106Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lc-3Sum">
-<meta name="twitter:description" content="15.3Sum法一：固定一个数，从而转化为2Sum。时间复杂度o(n^2) 空间复杂度o(123456789101112131415161718192021class Solution &amp;#123;public:    vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; threeSum(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;        int le">
+<meta name="twitter:title" content="Remove Duplicates from Sorted Array II">
+<meta name="twitter:description" content="26.Remove Duplicates from Sorted Array两个指针。j指示待插入位置，i寻找插入元素。ct指示i遇到的重复元素。time:o(n)space:o(1)1234567891011121314class Solution &amp;#123;public:    int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/10/lc-3Sum/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/21/lc-Remove-Duplicates-from-Sorted-Array-II/">
 
 
 
 
 
-  <title>lc-3Sum | 谦的bolg</title>
+  <title>Remove Duplicates from Sorted Array II | 谦的bolg</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/lc-3Sum/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/lc-Remove-Duplicates-from-Sorted-Array-II/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GQ">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">lc-3Sum</h1>
+          <h1 class="post-title" itemprop="name headline">Remove Duplicates from Sorted Array II</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-10T21:03:03+08:00">
-                2019-04-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-21T09:34:58+08:00">
+                2019-09-21
               </time>
             
 
@@ -300,13 +300,7 @@
       
 
       
-        <h1 id="15-3Sum"><a href="#15-3Sum" class="headerlink" title="15.3Sum"></a>15.3Sum</h1><h2 id="法一：固定一个数，从而转化为2Sum。"><a href="#法一：固定一个数，从而转化为2Sum。" class="headerlink" title="法一：固定一个数，从而转化为2Sum。"></a>法一：固定一个数，从而转化为2Sum。</h2><h2 id="时间复杂度o-n-2-空间复杂度o"><a href="#时间复杂度o-n-2-空间复杂度o" class="headerlink" title="时间复杂度o(n^2) 空间复杂度o("></a>时间复杂度o(n^2) 空间复杂度o(</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int len=nums.size();</span><br><span class="line">        map&lt;int,int&gt; mp;</span><br><span class="line">        set&lt;vector&lt;int&gt;&gt; ans;</span><br><span class="line">        int p=0;</span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        for(int i=0;i&lt;len;i++)&#123;</span><br><span class="line">            mp.clear();</span><br><span class="line">            int target=0-nums[i];</span><br><span class="line">            for(int j=i+1;j&lt;len;j++)&#123;</span><br><span class="line">                if(mp.find(target-nums[j])!=mp.end())&#123;</span><br><span class="line">                    ans.insert(&#123;nums[i],nums[j],target-nums[j]&#125;);</span><br><span class="line">                &#125;</span><br><span class="line">                mp[nums[j]]=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return vector&lt;vector&lt;int&gt;&gt;(ans.begin(), ans.end());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动："><a href="#法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动：" class="headerlink" title="法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动："></a>法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动：</h2><ul>
-<li>如果sum&lt;0,low++</li>
-<li>如果sum&gt;0,high–</li>
-<li>如果sum==0，push</li>
-<li>注意的点是要跳过重复元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums)&#123;</span><br><span class="line">        vector&lt;vector&lt;int&gt;&gt; res;</span><br><span class="line">        int len=nums.size();</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        for(int i=0;i&lt;len-2;i++)&#123;</span><br><span class="line">            while(i&gt;0&amp;&amp;nums[i]==nums[i-1]) i++;</span><br><span class="line">            int low=i+1,high=len-1;</span><br><span class="line">            while(low&lt;high)&#123;</span><br><span class="line">                int sum=nums[i]+nums[low]+nums[high];</span><br><span class="line">                if(sum&lt;0)&#123;</span><br><span class="line">                    while(++low&lt;high&amp;&amp;nums[low]==nums[low-1]) ;</span><br><span class="line">                &#125;</span><br><span class="line">                else if(sum&gt;0)&#123;</span><br><span class="line">                    while(low&lt;--high&amp;&amp;nums[high]==nums[high+1]) ;</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    res.push_back(vector&lt;int&gt;&#123;nums[i],nums[low],nums[high]&#125;);</span><br><span class="line">                    while(nums[++low]==nums[low-1]) ;</span><br><span class="line">                    while(nums[--high]==nums[high+1]) ;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
-</ul>
+        <h1 id="26-Remove-Duplicates-from-Sorted-Array"><a href="#26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="26.Remove Duplicates from Sorted Array"></a>26.Remove Duplicates from Sorted Array</h1><h2 id="两个指针。j指示待插入位置，i寻找插入元素。ct指示i遇到的重复元素。"><a href="#两个指针。j指示待插入位置，i寻找插入元素。ct指示i遇到的重复元素。" class="headerlink" title="两个指针。j指示待插入位置，i寻找插入元素。ct指示i遇到的重复元素。"></a>两个指针。j指示待插入位置，i寻找插入元素。ct指示i遇到的重复元素。</h2><h2 id="time-o-n"><a href="#time-o-n" class="headerlink" title="time:o(n)"></a>time:o(n)</h2><h2 id="space-o-1"><a href="#space-o-1" class="headerlink" title="space:o(1)"></a>space:o(1)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int removeDuplicates(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int len=nums.size();</span><br><span class="line">        if(len&lt;=1) return len;</span><br><span class="line">        int ct=1,j=1;</span><br><span class="line">        for(int i=1;i&lt;len;i++)&#123;</span><br><span class="line">            if(nums[i]==nums[i-1]) ct++;</span><br><span class="line">            else ct=1;</span><br><span class="line">            if(ct&lt;=2) nums[j++]=nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">        return j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -337,8 +331,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/10/lc-Longest-Common-Prefix/" rel="next" title="lc-Longest Common Prefix">
-                <i class="fa fa-chevron-left"></i> lc-Longest Common Prefix
+              <a href="/2019/09/21/lc-Remove Duplicates from Sorted Array/" rel="next" title="Remove Duplicates from Sorted Array">
+                <i class="fa fa-chevron-left"></i> Remove Duplicates from Sorted Array
               </a>
             
           </div>
@@ -347,8 +341,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/11/lc-3Sum-Closest/" rel="prev" title="lc-3Sum Closest">
-                lc-3Sum Closest <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/21/lc-Merge-Sorted-Array/" rel="prev" title="lc-Merge Sorted Array">
+                lc-Merge Sorted Array <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -472,7 +466,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#15-3Sum"><span class="nav-number">1.</span> <span class="nav-text">15.3Sum</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#法一：固定一个数，从而转化为2Sum。"><span class="nav-number">1.1.</span> <span class="nav-text">法一：固定一个数，从而转化为2Sum。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度o-n-2-空间复杂度o"><span class="nav-number">1.2.</span> <span class="nav-text">时间复杂度o(n^2) 空间复杂度o(</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动："><span class="nav-number">1.3.</span> <span class="nav-text">法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#26-Remove-Duplicates-from-Sorted-Array"><span class="nav-number">1.</span> <span class="nav-text">26.Remove Duplicates from Sorted Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#两个指针。j指示待插入位置，i寻找插入元素。ct指示i遇到的重复元素。"><span class="nav-number">1.1.</span> <span class="nav-text">两个指针。j指示待插入位置，i寻找插入元素。ct指示i遇到的重复元素。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time-o-n"><span class="nav-number">1.2.</span> <span class="nav-text">time:o(n)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#space-o-1"><span class="nav-number">1.3.</span> <span class="nav-text">space:o(1)</span></a></li></ol></li></ol></div>
             
 
           </div>
