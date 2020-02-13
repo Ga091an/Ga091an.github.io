@@ -229,6 +229,140 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/lc-Decode-Ways/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/21/lc-Decode-Ways/" itemprop="url">lc-Decode Ways</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-21T12:25:32+08:00">
+                2019-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><p>将<code>s</code>看成是一个充满障碍的路，每个数字代表一个障碍，我们需要从左到右通过这条路，需要满足的条件是: </p>
+<ul>
+<li>一次只能越过一个或者两个障碍</li>
+<li>越过的障碍在[1,26]之间<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Path s: _ 2 _ 2 _ 6 _</span><br><span class="line">Index:  0   1   2   3</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>对于上例，可能的路径就是<code>0-&gt;1-&gt;2-&gt;3</code>、<code>0-&gt;2-&gt;3</code>、<code>0-&gt;1-&gt;3</code>。<br>所以我们可以通过动态规划解此题，开辟一个大小为<code>s.size()+1</code>的数组<code>dp</code>, <code>dp[i]</code>代表从最左边(index=0)到达index=i的所有情况数，最终所求即dp的最后一个元素。所以<code>dp[0]</code>初始为1, 有两种方式可到达i:</p>
+<ol>
+<li>从i-1越过障碍<code>s[i-1]</code>到达i；</li>
+<li>从i-2越过障碍<code>s[i-2]</code>和<code>s[i-1]</code>到达i；</li>
+</ol>
+<p>情况1需要满足的条件是<code>s[i - 1] != 0</code>，情况2需要满足的条件是<code>s[i-2]</code>和<code>s[i-1]</code>组成的数字属于[1,26]</p>
+<h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><p>仔细分析思路一发现，我们每次循环只需要用到<code>dp[i]</code>、<code>dp[i - 1]</code>和<code>dp[i - 2]</code>，所以我们没必要开辟一个dp数组，而用<code>cur</code>、<code>pre</code>和<code>pre_pre</code>分别代表<code>dp[i]</code>、<code>dp[i - 1]</code>和<code>dp[i - 2]</code>就可以了。</p>
+<p>时间复杂度O(n)，空间复杂度O(1)</p>
+<h2 id="思路一-1"><a href="#思路一-1" class="headerlink" title="思路一"></a>思路一</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int numDecodings(string s) &#123;</span><br><span class="line">        int n=s.size();</span><br><span class="line">        if(n==0) return 0;</span><br><span class="line">        vector&lt;int&gt; dp(n+1,0);</span><br><span class="line">        if(s[0]&gt;&apos;0&apos;) dp[0]=1;</span><br><span class="line">        for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">            if(i-1&gt;=0&amp;&amp;s[i-1]&gt;&apos;0&apos;) dp[i]+=dp[i-1];</span><br><span class="line">            if(i-2&gt;=0&amp;&amp;s[i-2]&gt;&apos;2&apos;) continue;</span><br><span class="line">            if(i-2&gt;=0&amp;&amp;(s[i-2]==&apos;1&apos;)) dp[i]+=dp[i-2];</span><br><span class="line">            else if(i-2&gt;=0&amp;&amp;(s[i-2]==&apos;2&apos;&amp;&amp;s[i-1]&lt;&apos;7&apos;)) dp[i]+=dp[i-2];</span><br><span class="line">        &#125;</span><br><span class="line">        return dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="思路二-1"><a href="#思路二-1" class="headerlink" title="思路二"></a>思路二</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int numDecodings(string s) &#123;</span><br><span class="line">        int n=s.size();</span><br><span class="line">        if(n==0) return 0;</span><br><span class="line">        int cur=1,pre=0,pre_pre=1;</span><br><span class="line">        if(s[0]&gt;&apos;0&apos;) pre=1;</span><br><span class="line">        for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">            pre_pre=pre;</span><br><span class="line">            pre=cur;</span><br><span class="line">            cur=0;</span><br><span class="line">            if(i-1&gt;=0&amp;&amp;s[i-1]&gt;&apos;0&apos;) cur+=pre;</span><br><span class="line">            if(i-2&gt;=0&amp;&amp;s[i-2]&gt;&apos;2&apos;) continue;</span><br><span class="line">            if(i-2&gt;=0&amp;&amp;(s[i-2]==&apos;1&apos;)) cur+=pre_pre;</span><br><span class="line">            else if(i-2&gt;=0&amp;&amp;(s[i-2]==&apos;2&apos;&amp;&amp;s[i-1]&lt;&apos;7&apos;)) cur+=pre_pre;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        return cur;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/lc-Gray-code/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1346,126 +1480,6 @@ public:
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/01/lc-Container-with-most-water/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/01/lc-Container-with-most-water/" itemprop="url">lc-Container with most water</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-01T21:02:54+08:00">
-                2019-04-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="11-Container-With-Most-Water"><a href="#11-Container-With-Most-Water" class="headerlink" title="11. Container With Most Water"></a>11. Container With Most Water</h1><h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><h2 id="法一：-暴力法"><a href="#法一：-暴力法" class="headerlink" title="法一： 暴力法"></a>法一： 暴力法</h2><h3 id="时间复杂度o-n-2-空间复杂度o-1"><a href="#时间复杂度o-n-2-空间复杂度o-1" class="headerlink" title="时间复杂度o(n^2) 空间复杂度o(1)"></a>时间复杂度o(n^2) 空间复杂度o(1)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maxArea(vector&lt;int&gt;&amp; height) &#123;</span><br><span class="line">        int size=height.size();</span><br><span class="line">        int max=0;</span><br><span class="line">        for(int i=1;i&lt;size;i++)&#123;</span><br><span class="line">            for(int j=0;j&lt;i;j++)&#123;</span><br><span class="line">                int temp=min(height[i],height[j])*(i-j);</span><br><span class="line">                max=temp&gt;max?temp:max;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="法二：由于宽最大就是height两端之间的距离，所以要想在两端之内取得最大值的话只能是高度比较高。可以考虑设置两个初始分别为两端的指针left和right代表当前容器，不断跳过高度不够高的height使这两个指针往中间靠。这个过程不断循环即可得到结果。"><a href="#法二：由于宽最大就是height两端之间的距离，所以要想在两端之内取得最大值的话只能是高度比较高。可以考虑设置两个初始分别为两端的指针left和right代表当前容器，不断跳过高度不够高的height使这两个指针往中间靠。这个过程不断循环即可得到结果。" class="headerlink" title="法二：由于宽最大就是height两端之间的距离，所以要想在两端之内取得最大值的话只能是高度比较高。可以考虑设置两个初始分别为两端的指针left和right代表当前容器，不断跳过高度不够高的height使这两个指针往中间靠。这个过程不断循环即可得到结果。"></a>法二：由于宽最大就是height两端之间的距离，所以要想在两端之内取得最大值的话只能是高度比较高。可以考虑设置两个初始分别为两端的指针left和right代表当前容器，不断跳过高度不够高的height使这两个指针往中间靠。这个过程不断循环即可得到结果。</h2><h3 id="时间复杂度o-n-空间复杂度o-1"><a href="#时间复杂度o-n-空间复杂度o-1" class="headerlink" title="时间复杂度o(n) 空间复杂度o(1)"></a>时间复杂度o(n) 空间复杂度o(1)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maxArea(vector&lt;int&gt;&amp; height) &#123;</span><br><span class="line">        int size=height.size();</span><br><span class="line">        int res=0,left=0,right=size-1;</span><br><span class="line">        while(left&lt;right)&#123;</span><br><span class="line">            int h=min(height[left],height[right]);</span><br><span class="line">            res=max(res,h*(right-left));</span><br><span class="line">            while(height[left]&lt;=h) left++;</span><br><span class="line">            while(height[right]&lt;=h) right--;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1516,7 +1530,7 @@ public:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1566,7 +1580,7 @@ public:
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
