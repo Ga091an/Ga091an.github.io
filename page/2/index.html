@@ -229,6 +229,126 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/lc-Binary-tree-Inorder-Traversal/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/21/lc-Binary-tree-Inorder-Traversal/" itemprop="url">lc-Binary tree Inorder Traversal</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-21T15:27:22+08:00">
+                2019-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="94-Binary-Tree-Inorder-Traversal"><a href="#94-Binary-Tree-Inorder-Traversal" class="headerlink" title="94. Binary Tree Inorder Traversal"></a>94. Binary Tree Inorder Traversal</h1><h2 id="要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。"><a href="#要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。" class="headerlink" title="要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。"></a>要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。</h2><h3 id="time：？"><a href="#time：？" class="headerlink" title="time：？"></a>time：？</h3><h3 id="space：？"><a href="#space：？" class="headerlink" title="space：？"></a>space：？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; res;</span><br><span class="line">        stack&lt;TreeNode *&gt; stk;</span><br><span class="line">        TreeNode *p=root;</span><br><span class="line">        while(!stk.empty()||p)&#123;</span><br><span class="line">            if(p)&#123;</span><br><span class="line">                stk.push(p);</span><br><span class="line">                p=p-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                p=stk.top();</span><br><span class="line">                stk.pop();</span><br><span class="line">                res.push_back(p-&gt;val);</span><br><span class="line">                p=p-&gt;right;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/lc-Decode-Ways/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1361,130 +1481,11 @@ public:
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/lc-Longest-Common-Prefix/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/10/lc-Longest-Common-Prefix/" itemprop="url">lc-Longest Common Prefix</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-10T20:57:00+08:00">
-                2019-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="14-Longest-Common-Prefix"><a href="#14-Longest-Common-Prefix" class="headerlink" title="14. Longest Common Prefix"></a>14. Longest Common Prefix</h1><h2 id="基本思想：暴力匹配。。没啥说的"><a href="#基本思想：暴力匹配。。没啥说的" class="headerlink" title="基本思想：暴力匹配。。没啥说的"></a>基本思想：暴力匹配。。没啥说的</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string longestCommonPrefix(vector&lt;string&gt;&amp; strs) &#123;</span><br><span class="line">        int size=strs.size();</span><br><span class="line">        if(size==0) return &quot;&quot;;</span><br><span class="line">        if(size==1) return strs[0];</span><br><span class="line">        string res=&quot;&quot;;</span><br><span class="line">        int j=0;</span><br><span class="line">        while(1)&#123;</span><br><span class="line">            for(int i=0;i&lt;size-1;i++)&#123;</span><br><span class="line">                if(j&gt;strs[i].size()||strs[i][j]!=strs[i+1][j]) return res;</span><br><span class="line">            &#125;</span><br><span class="line">            res+=strs[0][j++];</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1530,7 +1531,7 @@ public:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
