@@ -229,6 +229,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/lc-3Sum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/10/lc-3Sum/" itemprop="url">lc-3Sum</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-10T21:03:03+08:00">
+                2019-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="15-3Sum"><a href="#15-3Sum" class="headerlink" title="15.3Sum"></a>15.3Sum</h1><h2 id="法一：固定一个数，从而转化为2Sum。"><a href="#法一：固定一个数，从而转化为2Sum。" class="headerlink" title="法一：固定一个数，从而转化为2Sum。"></a>法一：固定一个数，从而转化为2Sum。</h2><h2 id="时间复杂度o-n-2-空间复杂度o"><a href="#时间复杂度o-n-2-空间复杂度o" class="headerlink" title="时间复杂度o(n^2) 空间复杂度o("></a>时间复杂度o(n^2) 空间复杂度o(</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int len=nums.size();</span><br><span class="line">        map&lt;int,int&gt; mp;</span><br><span class="line">        set&lt;vector&lt;int&gt;&gt; ans;</span><br><span class="line">        int p=0;</span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        for(int i=0;i&lt;len;i++)&#123;</span><br><span class="line">            mp.clear();</span><br><span class="line">            int target=0-nums[i];</span><br><span class="line">            for(int j=i+1;j&lt;len;j++)&#123;</span><br><span class="line">                if(mp.find(target-nums[j])!=mp.end())&#123;</span><br><span class="line">                    ans.insert(&#123;nums[i],nums[j],target-nums[j]&#125;);</span><br><span class="line">                &#125;</span><br><span class="line">                mp[nums[j]]=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return vector&lt;vector&lt;int&gt;&gt;(ans.begin(), ans.end());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动："><a href="#法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动：" class="headerlink" title="法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动："></a>法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动：</h2><ul>
+<li>如果sum&lt;0,low++</li>
+<li>如果sum&gt;0,high–</li>
+<li>如果sum==0，push</li>
+<li>注意的点是要跳过重复元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums)&#123;</span><br><span class="line">        vector&lt;vector&lt;int&gt;&gt; res;</span><br><span class="line">        int len=nums.size();</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        for(int i=0;i&lt;len-2;i++)&#123;</span><br><span class="line">            while(i&gt;0&amp;&amp;nums[i]==nums[i-1]) i++;</span><br><span class="line">            int low=i+1,high=len-1;</span><br><span class="line">            while(low&lt;high)&#123;</span><br><span class="line">                int sum=nums[i]+nums[low]+nums[high];</span><br><span class="line">                if(sum&lt;0)&#123;</span><br><span class="line">                    while(++low&lt;high&amp;&amp;nums[low]==nums[low-1]) ;</span><br><span class="line">                &#125;</span><br><span class="line">                else if(sum&gt;0)&#123;</span><br><span class="line">                    while(low&lt;--high&amp;&amp;nums[high]==nums[high+1]) ;</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    res.push_back(vector&lt;int&gt;&#123;nums[i],nums[low],nums[high]&#125;);</span><br><span class="line">                    while(nums[++low]==nums[low-1]) ;</span><br><span class="line">                    while(nums[--high]==nums[high+1]) ;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/lc-Longest-Common-Prefix/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1296,126 +1422,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/lc-twosum/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/23/lc-twosum/" itemprop="url">lc-two sum</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T21:31:29+08:00">
-                2019-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-two-sum"><a href="#1-two-sum" class="headerlink" title="1.two sum"></a>1.two sum</h1><h2 id="基本思想：hashmap，从头到尾扫描线性表，每次遇到一个数num将其加入hashmap，并且查看hashmap-target-num-是否已经在hashmap中"><a href="#基本思想：hashmap，从头到尾扫描线性表，每次遇到一个数num将其加入hashmap，并且查看hashmap-target-num-是否已经在hashmap中" class="headerlink" title="基本思想：hashmap，从头到尾扫描线性表，每次遇到一个数num将其加入hashmap，并且查看hashmap[target-num]是否已经在hashmap中"></a>基本思想：hashmap，从头到尾扫描线性表，每次遇到一个数num将其加入hashmap，并且查看hashmap[target-num]是否已经在hashmap中</h2><h3 id="时间复杂度o-n"><a href="#时间复杂度o-n" class="headerlink" title="时间复杂度o(n)"></a>时间复杂度o(n)</h3><h3 id="空间复杂度o-n"><a href="#空间复杂度o-n" class="headerlink" title="空间复杂度o(n)"></a>空间复杂度o(n)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123;</span><br><span class="line">      unordered_map&lt;int,int&gt; m;</span><br><span class="line">      vector&lt;int&gt; ans;</span><br><span class="line">      for(int i=0;i&lt;nums.size();i++)&#123;</span><br><span class="line">        if(m.find(target-nums[i])!=m.end())&#123;</span><br><span class="line">          ans.push_back(i);</span><br><span class="line">          ans.push_back(m[target-nums[i]]);</span><br><span class="line">          return ans;</span><br><span class="line">        &#125;</span><br><span class="line">        m[nums[i]]=i;</span><br><span class="line">      &#125;      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1466,7 +1472,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
