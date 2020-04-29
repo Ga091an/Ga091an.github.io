@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="以[1,2,2]为例：[]-&amp;gt;[],1-&amp;gt;[],1,2,12-&amp;gt;[],1,2,12,2,12,22,122。 所以我们用last_insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同， 则从size-last_insert的位置开始插入，这样就不会产生重复了。time:space:class Solution">
+<meta name="description" content="以[1,2,2]为例：[]-&amp;gt;[],1-&amp;gt;[],1,2,12-&amp;gt;[],1,2,12,2,12,22,122。 所以我们用last_insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同， 则从size-last_insert的位置开始插入，这样就不会产生重复了。 time: space: class Solut">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lc-Gray code">
 <meta property="og:url" content="http://yoursite.com/2019/09/21/lc-Gray-code/index.html">
 <meta property="og:site_name" content="谦的bolg">
-<meta property="og:description" content="以[1,2,2]为例：[]-&amp;gt;[],1-&amp;gt;[],1,2,12-&amp;gt;[],1,2,12,2,12,22,122。 所以我们用last_insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同， 则从size-last_insert的位置开始插入，这样就不会产生重复了。time:space:class Solution">
+<meta property="og:description" content="以[1,2,2]为例：[]-&amp;gt;[],1-&amp;gt;[],1,2,12-&amp;gt;[],1,2,12,2,12,22,122。 所以我们用last_insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同， 则从size-last_insert的位置开始插入，这样就不会产生重复了。 time: space: class Solut">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-09-21T04:23:55.531Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lc-Gray code">
-<meta name="twitter:description" content="以[1,2,2]为例：[]-&amp;gt;[],1-&amp;gt;[],1,2,12-&amp;gt;[],1,2,12,2,12,22,122。 所以我们用last_insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同， 则从size-last_insert的位置开始插入，这样就不会产生重复了。time:space:class Solution">
+<meta name="twitter:description" content="以[1,2,2]为例：[]-&amp;gt;[],1-&amp;gt;[],1,2,12-&amp;gt;[],1,2,12,2,12,22,122。 所以我们用last_insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同， 则从size-last_insert的位置开始插入，这样就不会产生重复了。 time: space: class Solut">
 
 
 
@@ -300,7 +300,10 @@
       
 
       
-        <h2 id="以-1-2-2-为例：-gt-1-gt-1-2-12-gt-1-2-12-2-12-22-122。-所以我们用last-insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同，-则从size-last-insert的位置开始插入，这样就不会产生重复了。"><a href="#以-1-2-2-为例：-gt-1-gt-1-2-12-gt-1-2-12-2-12-22-122。-所以我们用last-insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同，-则从size-last-insert的位置开始插入，这样就不会产生重复了。" class="headerlink" title="以[1,2,2]为例：[]-&gt;[],1-&gt;[],1,2,12-&gt;[],1,2,12,2,12,22,122。 所以我们用last_insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同， 则从size-last_insert的位置开始插入，这样就不会产生重复了。"></a>以[1,2,2]为例：[]-&gt;[],1-&gt;[],1,2,12-&gt;[],1,2,12,2,12,22,122。 所以我们用last_insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同， 则从size-last_insert的位置开始插入，这样就不会产生重复了。</h2><h2 id="time"><a href="#time" class="headerlink" title="time:"></a>time:</h2><h2 id="space"><a href="#space" class="headerlink" title="space:"></a>space:</h2><pre><code>class Solution {
+        <h2 id="以122为例-1-1212-121221222122-所以我们用last_insert来记录上一个处理的数字的个数然后判定当前的数字和上面的是否相同若不同则循环还是从0到当前子集的个数若相同-则从size-last_insert的位置开始插入这样就不会产生重复了">以[1,2,2]为例：[]-&gt;[],1-&gt;[],1,2,12-&gt;[],1,2,12,2,12,22,122。 所以我们用last_insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同， 则从size-last_insert的位置开始插入，这样就不会产生重复了。</h2>
+<h2 id="time">time:</h2>
+<h2 id="space">space:</h2>
+<pre><code>class Solution {
 public:
     vector&lt;vector&lt;int&gt;&gt; subsetsWithDup(vector&lt;int&gt;&amp; nums) {
         int n=nums.size();
@@ -330,8 +333,8 @@ public:
         }
         return res;
     }
-};
-</code></pre>
+};</code></pre>
+
       
     </div>
     
@@ -496,7 +499,7 @@ public:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#以-1-2-2-为例：-gt-1-gt-1-2-12-gt-1-2-12-2-12-22-122。-所以我们用last-insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同，-则从size-last-insert的位置开始插入，这样就不会产生重复了。"><span class="nav-number">1.</span> <span class="nav-text">以[1,2,2]为例：[]-&gt;[],1-&gt;[],1,2,12-&gt;[],1,2,12,2,12,22,122。 所以我们用last_insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同， 则从size-last_insert的位置开始插入，这样就不会产生重复了。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time"><span class="nav-number">2.</span> <span class="nav-text">time:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#space"><span class="nav-number">3.</span> <span class="nav-text">space:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#以122为例-1-1212-121221222122-所以我们用last_insert来记录上一个处理的数字的个数然后判定当前的数字和上面的是否相同若不同则循环还是从0到当前子集的个数若相同-则从size-last_insert的位置开始插入这样就不会产生重复了"><span class="nav-number">1.</span> <span class="nav-text">以[1,2,2]为例：[]-&gt;[],1-&gt;[],1,2,12-&gt;[],1,2,12,2,12,22,122。 所以我们用last_insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同， 则从size-last_insert的位置开始插入，这样就不会产生重复了。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time"><span class="nav-number">2.</span> <span class="nav-text">time:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#space"><span class="nav-number">3.</span> <span class="nav-text">space:</span></a></li></ol></div>
             
 
           </div>
