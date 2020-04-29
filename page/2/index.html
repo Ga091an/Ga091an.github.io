@@ -229,6 +229,127 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/lc-Maximum-Depth-of-Binary-Tree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/29/lc-Maximum-Depth-of-Binary-Tree/" itemprop="url">lc-Maximum Depth of Binary Tree</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-29T22:42:54+08:00">
+                2019-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>对树进行递归遍历的时候更新下max_depth就行了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    void DFS(TreeNode* root,int level,int&amp; max_depth)&#123;</span><br><span class="line">        if(root==NULL) return;</span><br><span class="line">        level++;</span><br><span class="line">        if(level&gt;max_depth) max_depth=level;</span><br><span class="line">        DFS(root-&gt;left,level,max_depth);</span><br><span class="line">        DFS(root-&gt;right,level,max_depth);</span><br><span class="line">    &#125;</span><br><span class="line">    int maxDepth(TreeNode* root) &#123;</span><br><span class="line">        if(root==NULL) return 0;</span><br><span class="line">        int max_depth=1;</span><br><span class="line">        int level=0;</span><br><span class="line">        DFS(root,level,max_depth);</span><br><span class="line">        return max_depth;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/lc-Binary-Tree-Zigzag-Level-Order-Traversal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1327,156 +1448,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/lc-Gray-code/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/21/lc-Gray-code/" itemprop="url">lc-Gray code</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-21T12:07:26+08:00">
-                2019-09-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="以-1-2-2-为例：-gt-1-gt-1-2-12-gt-1-2-12-2-12-22-122。-所以我们用last-insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同，-则从size-last-insert的位置开始插入，这样就不会产生重复了。"><a href="#以-1-2-2-为例：-gt-1-gt-1-2-12-gt-1-2-12-2-12-22-122。-所以我们用last-insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同，-则从size-last-insert的位置开始插入，这样就不会产生重复了。" class="headerlink" title="以[1,2,2]为例：[]-&gt;[],1-&gt;[],1,2,12-&gt;[],1,2,12,2,12,22,122。 所以我们用last_insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同， 则从size-last_insert的位置开始插入，这样就不会产生重复了。"></a>以[1,2,2]为例：[]-&gt;[],1-&gt;[],1,2,12-&gt;[],1,2,12,2,12,22,122。 所以我们用last_insert来记录上一个处理的数字的个数，然后判定当前的数字和上面的是否相同，若不同，则循环还是从0到当前子集的个数，若相同， 则从size-last_insert的位置开始插入，这样就不会产生重复了。</h2><h2 id="time"><a href="#time" class="headerlink" title="time:"></a>time:</h2><h2 id="space"><a href="#space" class="headerlink" title="space:"></a>space:</h2><pre><code>class Solution {
-public:
-    vector&lt;vector&lt;int&gt;&gt; subsetsWithDup(vector&lt;int&gt;&amp; nums) {
-        int n=nums.size();
-        vector&lt;vector&lt;int&gt;&gt; res;
-        res.push_back(vector&lt;int&gt;{});
-        sort(nums.begin(),nums.end());
-        int ct,last_insert=1;
-        for(int i=0;i&lt;n;i++){
-            int size=res.size();
-            ct=last_insert;
-            last_insert=0;
-            if(i&gt;0&amp;&amp;nums[i]==nums[i-1]){
-                while(ct){
-                    last_insert++;
-                    res.push_back(res[size-ct]);
-                    res.back().push_back(nums[i]);
-                    ct--;
-                }
-            }
-            else{
-                for(int j=0;j&lt;size;j++){
-                    last_insert++;
-                    res.push_back(res[j]);
-                    res.back().push_back(nums[i]);
-                }   
-            }
-        }
-        return res;
-    }
-};
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1527,7 +1498,7 @@ public:
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1540,7 +1511,7 @@ public:
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

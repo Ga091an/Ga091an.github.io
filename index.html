@@ -229,6 +229,126 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/29/快速幂/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/29/快速幂/" itemprop="url">快速幂</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-29T10:17:01+08:00">
+                2020-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>求$x^n$</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/28/关于树的非递归遍历/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -303,7 +423,7 @@
             <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 <h2 id="preorder"><a href="#preorder" class="headerlink" title="preorder"></a>preorder</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PreOrder</span><span class="params">(TreeNode* root)</span></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;TreeNode*&gt; s;</span><br><span class="line">    TreeNode* p=root;</span><br><span class="line">    <span class="keyword">while</span>(p||!s.empty())&#123;</span><br><span class="line">        <span class="keyword">if</span>(p)&#123;</span><br><span class="line">            <span class="comment">//visit</span></span><br><span class="line">            visit(p);</span><br><span class="line">            s.push(p);</span><br><span class="line">            p=p-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            p=s.top();</span><br><span class="line">            s.pop();</span><br><span class="line"></span><br><span class="line">            p=p-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="inorder"><a href="#inorder" class="headerlink" title="inorder"></a>inorder</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InOrder</span><span class="params">(TreeNode* root)</span></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;TreeNode*&gt; s;</span><br><span class="line">    TreeNode* p=root;</span><br><span class="line">    <span class="keyword">while</span>(p||!s.empty())&#123;</span><br><span class="line">        <span class="keyword">if</span>(p)&#123;</span><br><span class="line">            s.push(p);</span><br><span class="line">            p=p-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            p=s.top();</span><br><span class="line">            s.pop();</span><br><span class="line">            <span class="comment">//visit</span></span><br><span class="line">            visit(p);</span><br><span class="line">            p=p-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="postorder"><a href="#postorder" class="headerlink" title="postorder"></a>postorder</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(TreeNode* root)</span></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;TreeNode*&gt; s;</span><br><span class="line">    TreeNode* p=root;</span><br><span class="line">    TreeNode* r=<span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">while</span>(p||!s.empty())&#123;</span><br><span class="line">        <span class="keyword">if</span>(p)&#123;</span><br><span class="line">            s.push(p);</span><br><span class="line">            p=p-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            p=s.top();</span><br><span class="line">            <span class="keyword">if</span>(p-&gt;right&amp;&amp;p-&gt;right!=r)&#123;</span><br><span class="line">                p=p-&gt;right;</span><br><span class="line">                s.push(p);</span><br><span class="line">                p=p-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                s.pop();</span><br><span class="line">                <span class="comment">//visit</span></span><br><span class="line">                visit(p);</span><br><span class="line">                r=p;</span><br><span class="line">                p=<span class="literal">nullptr</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="postorder"><a href="#postorder" class="headerlink" title="postorder"></a>postorder</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">PostOrder</span><span class="params">(TreeNode* root)</span></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>&lt;TreeNode*&gt; s;</span><br><span class="line">    TreeNode* p=root;</span><br><span class="line">    <span class="comment">//辅助指针r，用于指向最近被访问的节点；当然，也可以在节点中增加一个标志域，用于记录是否已被访问</span></span><br><span class="line">    TreeNode* r=<span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">while</span>(p||!s.empty())&#123;</span><br><span class="line">        <span class="keyword">if</span>(p)&#123;</span><br><span class="line">            s.push(p);</span><br><span class="line">            p=p-&gt;left;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//根结点会到这儿两次，第一次p-&gt;right是不等于r的，第二次是等于的</span></span><br><span class="line">            p=s.top();</span><br><span class="line">            <span class="keyword">if</span>(p-&gt;right&amp;&amp;p-&gt;right!=r)&#123;</span><br><span class="line">                p=p-&gt;right;</span><br><span class="line">                s.push(p);</span><br><span class="line">                p=p-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                s.pop();</span><br><span class="line">                <span class="comment">//visit</span></span><br><span class="line">                visit(p);</span><br><span class="line">                r=p;</span><br><span class="line">                p=<span class="literal">nullptr</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -423,7 +543,8 @@
       
         
           
-            
+            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> b=n;</span><br><span class="line">        <span class="keyword">long</span> abs_n=b&gt;<span class="number">0</span>?b:-b;</span><br><span class="line">        <span class="keyword">double</span> res=helper(x,abs_n);</span><br><span class="line">        <span class="keyword">return</span> n&gt;<span class="number">0</span>?res:<span class="number">1.0</span>/res;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">helper</span><span class="params">(<span class="keyword">double</span> x,<span class="keyword">long</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">double</span> res=helper(x,n&gt;&gt;<span class="number">1</span>);</span><br><span class="line">        res*=res;</span><br><span class="line">        <span class="keyword">if</span>(n&amp;<span class="number">1</span>)</span><br><span class="line">           res*=x;</span><br><span class="line">        <span class="keyword">return</span> res; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
           
         
       
@@ -1293,127 +1414,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/29/lc-Maximum-Depth-of-Binary-Tree/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/29/lc-Maximum-Depth-of-Binary-Tree/" itemprop="url">lc-Maximum Depth of Binary Tree</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-29T22:42:54+08:00">
-                2019-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>对树进行递归遍历的时候更新下max_depth就行了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    void DFS(TreeNode* root,int level,int&amp; max_depth)&#123;</span><br><span class="line">        if(root==NULL) return;</span><br><span class="line">        level++;</span><br><span class="line">        if(level&gt;max_depth) max_depth=level;</span><br><span class="line">        DFS(root-&gt;left,level,max_depth);</span><br><span class="line">        DFS(root-&gt;right,level,max_depth);</span><br><span class="line">    &#125;</span><br><span class="line">    int maxDepth(TreeNode* root) &#123;</span><br><span class="line">        if(root==NULL) return 0;</span><br><span class="line">        int max_depth=1;</span><br><span class="line">        int level=0;</span><br><span class="line">        DFS(root,level,max_depth);</span><br><span class="line">        return max_depth;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1464,7 +1464,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1477,7 +1477,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
