@@ -229,6 +229,731 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/lc-Remove-Duplicates-from-Sorted-Array-II/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/21/lc-Remove-Duplicates-from-Sorted-Array-II/" itemprop="url">Remove Duplicates from Sorted Array II</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-21T09:34:58+08:00">
+                2019-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="26-Remove-Duplicates-from-Sorted-Array"><a href="#26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="26.Remove Duplicates from Sorted Array"></a>26.Remove Duplicates from Sorted Array</h1><h2 id="两个指针。j指示待插入位置，i寻找插入元素。ct指示i遇到的重复元素。"><a href="#两个指针。j指示待插入位置，i寻找插入元素。ct指示i遇到的重复元素。" class="headerlink" title="两个指针。j指示待插入位置，i寻找插入元素。ct指示i遇到的重复元素。"></a>两个指针。j指示待插入位置，i寻找插入元素。ct指示i遇到的重复元素。</h2><h2 id="time-o-n"><a href="#time-o-n" class="headerlink" title="time:o(n)"></a>time:o(n)</h2><h2 id="space-o-1"><a href="#space-o-1" class="headerlink" title="space:o(1)"></a>space:o(1)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int removeDuplicates(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int len=nums.size();</span><br><span class="line">        if(len&lt;=1) return len;</span><br><span class="line">        int ct=1,j=1;</span><br><span class="line">        for(int i=1;i&lt;len;i++)&#123;</span><br><span class="line">            if(nums[i]==nums[i-1]) ct++;</span><br><span class="line">            else ct=1;</span><br><span class="line">            if(ct&lt;=2) nums[j++]=nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">        return j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/21/lc-Remove Duplicates from Sorted Array/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/21/lc-Remove Duplicates from Sorted Array/" itemprop="url">Remove Duplicates from Sorted Array</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-21T09:22:12+08:00">
+                2019-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="26-Remove-Duplicates-from-Sorted-Array"><a href="#26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="26.Remove Duplicates from Sorted Array"></a>26.Remove Duplicates from Sorted Array</h1><h2 id="两个指针。i指示待插入位置，j寻找插入元素"><a href="#两个指针。i指示待插入位置，j寻找插入元素" class="headerlink" title="两个指针。i指示待插入位置，j寻找插入元素"></a>两个指针。i指示待插入位置，j寻找插入元素</h2><h2 id="time-o-n"><a href="#time-o-n" class="headerlink" title="time:o(n)"></a>time:o(n)</h2><h2 id="space-o-1"><a href="#space-o-1" class="headerlink" title="space:o(1)"></a>space:o(1)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int removeDuplicates(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int i=0,j;</span><br><span class="line">        if(nums.size()==0) return 0;</span><br><span class="line">        for(j=0;j&lt;nums.size();j++)&#123;</span><br><span class="line">            if(nums[i]&lt;nums[j]) nums[++i]=nums[j];</span><br><span class="line">        &#125;</span><br><span class="line">        nums.resize(i+1);</span><br><span class="line">        return i+1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/11/lc-3Sum-Closest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/11/lc-3Sum-Closest/" itemprop="url">lc-3Sum Closest</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-11T21:10:58+08:00">
+                2019-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="16-3Sum-Closest"><a href="#16-3Sum-Closest" class="headerlink" title="16.3Sum Closest"></a>16.3Sum Closest</h1><h2 id="先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。"><a href="#先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。" class="headerlink" title="先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。"></a>先排序，然后就是对nums进行循环，设low和high两个指针，判断当前三个数的和与target的差值，并不断更新这个最小差值。</h2><h2 id="时间复杂度o-n-2"><a href="#时间复杂度o-n-2" class="headerlink" title="时间复杂度o(n^2)"></a>时间复杂度o(n^2)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int threeSumClosest(vector&lt;int&gt;&amp; nums, int target) &#123;</span><br><span class="line">        long long sum=nums[0]+nums[1]+nums[2],min_gap,curr_gap,res;</span><br><span class="line">        int size=nums.size();</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        min_gap=abs(target-sum);</span><br><span class="line">        for(int i=0;i&lt;size-2;i++)&#123;</span><br><span class="line">            int low=i+1,high=size-1;</span><br><span class="line">            while(low&lt;high)&#123;</span><br><span class="line">                sum=nums[i]+nums[low]+nums[high];</span><br><span class="line">                curr_gap=abs(target-sum);</span><br><span class="line">                if(curr_gap&lt;=min_gap)&#123;</span><br><span class="line">                    res=sum;</span><br><span class="line">                    min_gap=curr_gap;</span><br><span class="line">                &#125;</span><br><span class="line">                if(sum&lt;target) low++;</span><br><span class="line">                else if(sum&gt;target) high--;</span><br><span class="line">                else return target;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/lc-3Sum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/10/lc-3Sum/" itemprop="url">lc-3Sum</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-10T21:03:03+08:00">
+                2019-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="15-3Sum"><a href="#15-3Sum" class="headerlink" title="15.3Sum"></a>15.3Sum</h1><h2 id="法一：固定一个数，从而转化为2Sum。"><a href="#法一：固定一个数，从而转化为2Sum。" class="headerlink" title="法一：固定一个数，从而转化为2Sum。"></a>法一：固定一个数，从而转化为2Sum。</h2><h2 id="时间复杂度o-n-2-空间复杂度o"><a href="#时间复杂度o-n-2-空间复杂度o" class="headerlink" title="时间复杂度o(n^2) 空间复杂度o("></a>时间复杂度o(n^2) 空间复杂度o(</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int len=nums.size();</span><br><span class="line">        map&lt;int,int&gt; mp;</span><br><span class="line">        set&lt;vector&lt;int&gt;&gt; ans;</span><br><span class="line">        int p=0;</span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        for(int i=0;i&lt;len;i++)&#123;</span><br><span class="line">            mp.clear();</span><br><span class="line">            int target=0-nums[i];</span><br><span class="line">            for(int j=i+1;j&lt;len;j++)&#123;</span><br><span class="line">                if(mp.find(target-nums[j])!=mp.end())&#123;</span><br><span class="line">                    ans.insert(&#123;nums[i],nums[j],target-nums[j]&#125;);</span><br><span class="line">                &#125;</span><br><span class="line">                mp[nums[j]]=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return vector&lt;vector&lt;int&gt;&gt;(ans.begin(), ans.end());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动："><a href="#法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动：" class="headerlink" title="法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动："></a>法二：固定一个数，转化为2Sum。在2Sum问题中，使用low和high两个指针进行移动：</h2><ul>
+<li>如果sum&lt;0,low++</li>
+<li>如果sum&gt;0,high—</li>
+<li>如果sum==0，push</li>
+<li>注意的点是要跳过重复元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;vector&lt;int&gt;&gt; threeSum(vector&lt;int&gt;&amp; nums)&#123;</span><br><span class="line">        vector&lt;vector&lt;int&gt;&gt; res;</span><br><span class="line">        int len=nums.size();</span><br><span class="line">        sort(nums.begin(),nums.end());</span><br><span class="line">        for(int i=0;i&lt;len-2;i++)&#123;</span><br><span class="line">            while(i&gt;0&amp;&amp;nums[i]==nums[i-1]) i++;</span><br><span class="line">            int low=i+1,high=len-1;</span><br><span class="line">            while(low&lt;high)&#123;</span><br><span class="line">                int sum=nums[i]+nums[low]+nums[high];</span><br><span class="line">                if(sum&lt;0)&#123;</span><br><span class="line">                    while(++low&lt;high&amp;&amp;nums[low]==nums[low-1]) ;</span><br><span class="line">                &#125;</span><br><span class="line">                else if(sum&gt;0)&#123;</span><br><span class="line">                    while(low&lt;--high&amp;&amp;nums[high]==nums[high+1]) ;</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    res.push_back(vector&lt;int&gt;&#123;nums[i],nums[low],nums[high]&#125;);</span><br><span class="line">                    while(nums[++low]==nums[low-1]) ;</span><br><span class="line">                    while(nums[--high]==nums[high+1]) ;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/lc-Longest-Common-Prefix/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/10/lc-Longest-Common-Prefix/" itemprop="url">lc-Longest Common Prefix</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-10T20:57:00+08:00">
+                2019-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="14-Longest-Common-Prefix"><a href="#14-Longest-Common-Prefix" class="headerlink" title="14. Longest Common Prefix"></a>14. Longest Common Prefix</h1><h2 id="基本思想：暴力匹配。。没啥说的"><a href="#基本思想：暴力匹配。。没啥说的" class="headerlink" title="基本思想：暴力匹配。。没啥说的"></a>基本思想：暴力匹配。。没啥说的</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string longestCommonPrefix(vector&lt;string&gt;&amp; strs) &#123;</span><br><span class="line">        int size=strs.size();</span><br><span class="line">        if(size==0) return &quot;&quot;;</span><br><span class="line">        if(size==1) return strs[0];</span><br><span class="line">        string res=&quot;&quot;;</span><br><span class="line">        int j=0;</span><br><span class="line">        while(1)&#123;</span><br><span class="line">            for(int i=0;i&lt;size-1;i++)&#123;</span><br><span class="line">                if(j&gt;strs[i].size()||strs[i][j]!=strs[i+1][j]) return res;</span><br><span class="line">            &#125;</span><br><span class="line">            res+=strs[0][j++];</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/01/lc-Container-with-most-water/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/01/lc-Container-with-most-water/" itemprop="url">lc-Container with most water</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-01T21:02:54+08:00">
+                2019-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="11-Container-With-Most-Water"><a href="#11-Container-With-Most-Water" class="headerlink" title="11. Container With Most Water"></a>11. Container With Most Water</h1><h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><h2 id="法一：-暴力法"><a href="#法一：-暴力法" class="headerlink" title="法一： 暴力法"></a>法一： 暴力法</h2><h3 id="时间复杂度o-n-2-空间复杂度o-1"><a href="#时间复杂度o-n-2-空间复杂度o-1" class="headerlink" title="时间复杂度o(n^2) 空间复杂度o(1)"></a>时间复杂度o(n^2) 空间复杂度o(1)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maxArea(vector&lt;int&gt;&amp; height) &#123;</span><br><span class="line">        int size=height.size();</span><br><span class="line">        int max=0;</span><br><span class="line">        for(int i=1;i&lt;size;i++)&#123;</span><br><span class="line">            for(int j=0;j&lt;i;j++)&#123;</span><br><span class="line">                int temp=min(height[i],height[j])*(i-j);</span><br><span class="line">                max=temp&gt;max?temp:max;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="法二：由于宽最大就是height两端之间的距离，所以要想在两端之内取得最大值的话只能是高度比较高。可以考虑设置两个初始分别为两端的指针left和right代表当前容器，不断跳过高度不够高的height使这两个指针往中间靠。这个过程不断循环即可得到结果。"><a href="#法二：由于宽最大就是height两端之间的距离，所以要想在两端之内取得最大值的话只能是高度比较高。可以考虑设置两个初始分别为两端的指针left和right代表当前容器，不断跳过高度不够高的height使这两个指针往中间靠。这个过程不断循环即可得到结果。" class="headerlink" title="法二：由于宽最大就是height两端之间的距离，所以要想在两端之内取得最大值的话只能是高度比较高。可以考虑设置两个初始分别为两端的指针left和right代表当前容器，不断跳过高度不够高的height使这两个指针往中间靠。这个过程不断循环即可得到结果。"></a>法二：由于宽最大就是height两端之间的距离，所以要想在两端之内取得最大值的话只能是高度比较高。可以考虑设置两个初始分别为两端的指针left和right代表当前容器，不断跳过高度不够高的height使这两个指针往中间靠。这个过程不断循环即可得到结果。</h2><h3 id="时间复杂度o-n-空间复杂度o-1"><a href="#时间复杂度o-n-空间复杂度o-1" class="headerlink" title="时间复杂度o(n) 空间复杂度o(1)"></a>时间复杂度o(n) 空间复杂度o(1)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int maxArea(vector&lt;int&gt;&amp; height) &#123;</span><br><span class="line">        int size=height.size();</span><br><span class="line">        int res=0,left=0,right=size-1;</span><br><span class="line">        while(left&lt;right)&#123;</span><br><span class="line">            int h=min(height[left],height[right]);</span><br><span class="line">            res=max(res,h*(right-left));</span><br><span class="line">            while(height[left]&lt;=h) left++;</span><br><span class="line">            while(height[right]&lt;=h) right--;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/30/lc-Palindrome-Number/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -300,10 +1025,7 @@
       
         
           
-            <h1 id="palindrome-number">9.Palindrome Number</h1>
-<h2 id="基本思想当然可以把数字提出然后设置头尾指针来判断这里是将其对应的数字直接逆置过来">基本思想：当然可以把数字提出，然后设置头尾指针来判断。这里是将其对应的数字直接逆置过来。</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool isPalindrome(int x) &#123;</span><br><span class="line">        if(x&lt;0) return false;</span><br><span class="line">        int temp=x;</span><br><span class="line">        long long res=0;</span><br><span class="line">        while(x)&#123;</span><br><span class="line">            int c=x%10;</span><br><span class="line">            res=res*10+c;</span><br><span class="line">            x/=10;</span><br><span class="line">        &#125;</span><br><span class="line">        return res==temp?true:false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+            <h1 id="9-Palindrome-Number"><a href="#9-Palindrome-Number" class="headerlink" title="9.Palindrome Number"></a>9.Palindrome Number</h1><h2 id="基本思想：当然可以把数字提出，然后设置头尾指针来判断。这里是将其对应的数字直接逆置过来。"><a href="#基本思想：当然可以把数字提出，然后设置头尾指针来判断。这里是将其对应的数字直接逆置过来。" class="headerlink" title="基本思想：当然可以把数字提出，然后设置头尾指针来判断。这里是将其对应的数字直接逆置过来。"></a>基本思想：当然可以把数字提出，然后设置头尾指针来判断。这里是将其对应的数字直接逆置过来。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool isPalindrome(int x) &#123;</span><br><span class="line">        if(x&lt;0) return false;</span><br><span class="line">        int temp=x;</span><br><span class="line">        long long res=0;</span><br><span class="line">        while(x)&#123;</span><br><span class="line">            int c=x%10;</span><br><span class="line">            res=res*10+c;</span><br><span class="line">            x/=10;</span><br><span class="line">        &#125;</span><br><span class="line">        return res==temp?true:false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -422,10 +1144,7 @@
       
         
           
-            <h1 id="string-to-integer">8.string to integer</h1>
-<h2 id="基本思想去空格-判断符号-转换注意有些小坑点">基本思想：去空格-&gt;判断符号-&gt;转换。注意有些小坑点</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">CharToInt</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> c)</span></span>&#123;</span><br><span class="line">        <span class="comment">//char转换为int</span></span><br><span class="line">        <span class="comment">//如果不是‘0’-‘9’，那么返回-1</span></span><br><span class="line">         <span class="keyword">if</span>(c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>) <span class="keyword">return</span> (c-<span class="string">'0'</span>);</span><br><span class="line">         <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(<span class="built_in">string</span> str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> len=str.size(),i=<span class="number">0</span>,ispositive=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> s[<span class="number">33</span>],p=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">        <span class="comment">//去除空格</span></span><br><span class="line">        <span class="keyword">while</span>(i&lt;len&amp;&amp;(str[i]==<span class="string">' '</span>)) i++;</span><br><span class="line">        <span class="keyword">if</span>(str[i]==<span class="string">'-'</span>) &#123;</span><br><span class="line">            ispositive=<span class="number">0</span>;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(str[i]==<span class="string">'+'</span>) i++;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;len&amp;&amp;str[i]==<span class="string">'0'</span>) i++;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;len)&#123;</span><br><span class="line">            <span class="keyword">int</span> c=CharToInt(str[i++]);</span><br><span class="line">            <span class="keyword">if</span>(c!=<span class="number">-1</span>)&#123;</span><br><span class="line">                res=res*<span class="number">10</span>+c;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//此处有坑点：判断溢出要放在while里，一旦出现溢出就要返回结果</span></span><br><span class="line">            <span class="keyword">if</span>(ispositive==<span class="number">1</span>&amp;&amp;res&gt;INT_MAX) <span class="keyword">return</span> INT_MAX;</span><br><span class="line">            <span class="keyword">if</span>(ispositive==<span class="number">0</span>&amp;&amp;-res&lt;INT_MIN) <span class="keyword">return</span> INT_MIN;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ispositive==<span class="number">1</span>?res:-res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+            <h1 id="8-string-to-integer"><a href="#8-string-to-integer" class="headerlink" title="8.string to integer"></a>8.string to integer</h1><h2 id="基本思想：去空格-gt-判断符号-gt-转换。注意有些小坑点"><a href="#基本思想：去空格-gt-判断符号-gt-转换。注意有些小坑点" class="headerlink" title="基本思想：去空格-&gt;判断符号-&gt;转换。注意有些小坑点"></a>基本思想：去空格-&gt;判断符号-&gt;转换。注意有些小坑点</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">CharToInt</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> c)</span></span>&#123;</span><br><span class="line">        <span class="comment">//char转换为int</span></span><br><span class="line">        <span class="comment">//如果不是‘0’-‘9’，那么返回-1</span></span><br><span class="line">         <span class="keyword">if</span>(c&gt;=<span class="string">'0'</span>&amp;&amp;c&lt;=<span class="string">'9'</span>) <span class="keyword">return</span> (c-<span class="string">'0'</span>);</span><br><span class="line">         <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(<span class="built_in">string</span> str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> len=str.size(),i=<span class="number">0</span>,ispositive=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> s[<span class="number">33</span>],p=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> j=<span class="number">0</span>;</span><br><span class="line">        <span class="comment">//去除空格</span></span><br><span class="line">        <span class="keyword">while</span>(i&lt;len&amp;&amp;(str[i]==<span class="string">' '</span>)) i++;</span><br><span class="line">        <span class="keyword">if</span>(str[i]==<span class="string">'-'</span>) &#123;</span><br><span class="line">            ispositive=<span class="number">0</span>;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(str[i]==<span class="string">'+'</span>) i++;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;len&amp;&amp;str[i]==<span class="string">'0'</span>) i++;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;len)&#123;</span><br><span class="line">            <span class="keyword">int</span> c=CharToInt(str[i++]);</span><br><span class="line">            <span class="keyword">if</span>(c!=<span class="number">-1</span>)&#123;</span><br><span class="line">                res=res*<span class="number">10</span>+c;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//此处有坑点：判断溢出要放在while里，一旦出现溢出就要返回结果</span></span><br><span class="line">            <span class="keyword">if</span>(ispositive==<span class="number">1</span>&amp;&amp;res&gt;INT_MAX) <span class="keyword">return</span> INT_MAX;</span><br><span class="line">            <span class="keyword">if</span>(ispositive==<span class="number">0</span>&amp;&amp;-res&lt;INT_MIN) <span class="keyword">return</span> INT_MIN;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ispositive==<span class="number">1</span>?res:-res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -544,10 +1263,7 @@
       
         
           
-            <h1 id="reverse-integer">7.Reverse Integer</h1>
-<h2 id="基本思想a.100--1b.注意溢出只能是231-231-1-即-2147483648-2147483647">基本思想：a.100 -&gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int reverse(int x) &#123;</span><br><span class="line">        int res=0,temp=x;</span><br><span class="line">        while(temp)&#123;</span><br><span class="line">            if(abs(res)&gt;INT_MAX/10) return 0;</span><br><span class="line">            if(abs(res)==INT_MAX/10)&#123;</span><br><span class="line">                if(temp==-9||temp==8) return 0;</span><br><span class="line">            &#125;</span><br><span class="line">                res=res*10+temp%10;</span><br><span class="line">                temp/=10;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+            <h1 id="7-Reverse-Integer"><a href="#7-Reverse-Integer" class="headerlink" title="7.Reverse Integer"></a>7.Reverse Integer</h1><h2 id="基本思想：a-100-gt-1-b-注意溢出（只能是-−2-31-2-31-−-1-即-2147483648-2147483647-。"><a href="#基本思想：a-100-gt-1-b-注意溢出（只能是-−2-31-2-31-−-1-即-2147483648-2147483647-。" class="headerlink" title="基本思想：a.100 -&gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。"></a>基本思想：a.100 -&gt;1;b.注意溢出（只能是[−2^31, 2^31 − 1], 即[-2147483648, 2147483647])。</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int reverse(int x) &#123;</span><br><span class="line">        int res=0,temp=x;</span><br><span class="line">        while(temp)&#123;</span><br><span class="line">            if(abs(res)&gt;INT_MAX/10) return 0;</span><br><span class="line">            if(abs(res)==INT_MAX/10)&#123;</span><br><span class="line">                if(temp==-9||temp==8) return 0;</span><br><span class="line">            &#125;</span><br><span class="line">                res=res*10+temp%10;</span><br><span class="line">                temp/=10;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -666,641 +1382,7 @@
       
         
           
-            <h1 id="zigzag-conversion">6.zigzag conversion</h1>
-<h2 id="基本思想找周期t2numrows-2对称性-时间复杂度on-空间复杂度o1">基本思想：找周期t=2*numRows-2;对称性； ## 时间复杂度o(n) ## 空间复杂度o(1) <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string convert(string s, int numRows) &#123;</span><br><span class="line">        if(numRows==1) return s;</span><br><span class="line">        int t=2*numRows-2;</span><br><span class="line">        string str=&quot;&quot;;</span><br><span class="line">        for(int i=0;i&lt;numRows;i++)&#123;</span><br><span class="line">            int pos1=i,pos2=t-i;</span><br><span class="line">            while(1)&#123;</span><br><span class="line">                if(pos1&gt;=s.size()) break;</span><br><span class="line">                str+=s[pos1];</span><br><span class="line">                pos1+=t;</span><br><span class="line">                if(i!=0&amp;&amp;i!=numRows-1)&#123;</span><br><span class="line">                    if(pos2&gt;=s.size()) break;</span><br><span class="line">                    str+=s[pos2];</span><br><span class="line">                    pos2+=t;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            return str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></h2>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/26/lc-longest-palindromic-substring/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/26/lc-longest-palindromic-substring/" itemprop="url">lc-longest palindromic substring</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-26T23:15:50+08:00">
-                2019-03-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="longest-palindromic-substring">5.longest palindromic substring</h1>
-<h2 id="基本思想对每个字符分奇偶讨论其longest-palindromic-substring">基本思想：对每个字符分奇偶讨论其longest palindromic substring</h2>
-<h3 id="时间复杂度-on">时间复杂度 o(n)</h3>
-<h3 id="空间复杂度o1">空间复杂度o(1);</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string longestPalindrome(string s) &#123;</span><br><span class="line">        int size=s.size();</span><br><span class="line">        int p=0,q=0,maxlen=1;</span><br><span class="line"></span><br><span class="line">        for(int i=0;i&lt;size;i++)&#123;</span><br><span class="line">            //the length of the palindromic is odd</span><br><span class="line">            int j=1;</span><br><span class="line">            while((i-j)&gt;=0&amp;&amp;(i+j)&lt;size&amp;&amp;s[i-j]==s[i+j]) j++;</span><br><span class="line">            j--;</span><br><span class="line">            if((2*j+1)&gt;maxlen) &#123;</span><br><span class="line">                maxlen=2*j+1;</span><br><span class="line">                p=i;</span><br><span class="line">                q=j;</span><br><span class="line">            &#125;</span><br><span class="line">            j=0;</span><br><span class="line">            while((i-j)&gt;=0&amp;&amp;(i+j+1)&lt;size&amp;&amp;s[i-j]==s[i+j+1]) j++;</span><br><span class="line">            if((2*j)&gt;maxlen) &#123;</span><br><span class="line">                maxlen=2*j;</span><br><span class="line">                p=i;</span><br><span class="line">                q=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        string str2;</span><br><span class="line">        if(maxlen%2==0)&#123;</span><br><span class="line">            //even</span><br><span class="line">            str2=s.substr(p-maxlen/2+1,maxlen);</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            //odd</span><br><span class="line">            str2=s.substr(p-maxlen/2,maxlen);</span><br><span class="line">        &#125;</span><br><span class="line">        return str2;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/lc-Longest-substring-without-repeating-characters/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/25/lc-Longest-substring-without-repeating-characters/" itemprop="url">lc-Longest substring without repeating characters</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T20:38:55+08:00">
-                2019-03-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="longest-substring-without-repeating-characters">3.Longest substring without repeating characters</h1>
-<h2 id="方法一基本思想动态规划dpi是指以si结尾的字符串的lcs初始dpi1dpi的值为从si-1开始往前遍历dpi-1个字符若中途遍历到某个字符与si相等了则跳出循环若往前遍历了tmp从0开始个字符则dpi-tmp">方法一基本思想：动态规划。dp[i]是指以s[i]结尾的字符串的lcs。初始dp[i]=1;dp[i]的值为从s[i-1]开始往前遍历dp[i-1]个字符，若中途遍历到某个字符与s[i]相等了则跳出循环。若往前遍历了tmp(从0开始)个字符，则dp[i] += tmp。</h2>
-<h3 id="时间复杂度on">时间复杂度o(n)</h3>
-<h3 id="空间复杂度on">空间复杂度o(n)</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int lengthOfLongestSubstring(string s) &#123;</span><br><span class="line">        int size=s.size();</span><br><span class="line">        if(size==0) return 0;</span><br><span class="line">        int *dp=new int[size];</span><br><span class="line">        for(int i=0;i&lt;size;i++) dp[i]=1;</span><br><span class="line">        int max=1;</span><br><span class="line">        for(int i=1;i&lt;size;i++)&#123;</span><br><span class="line">            int k;</span><br><span class="line">            int j=dp[i-1];</span><br><span class="line">            for( k=0;k&lt;j;k++)&#123;</span><br><span class="line">                if(s[i-k-1]==s[i]) break;</span><br><span class="line">            &#125;</span><br><span class="line">            dp[i]=k+1;</span><br><span class="line">            max=dp[i]&gt;max?dp[i]:max;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="方法二基本思想窗口法mpi记录了si在数组中的位置初始为-1.lefti表示滑动窗口窗口内的字符都是无重复的left和i初始值都为0并且按照如下步骤循环">方法二基本思想：窗口法。mp[i]记录了s[i]在数组中的位置。初始为-1.[left,i]表示滑动窗口，窗口内的字符都是无重复的。left和i初始值都为0，并且按照如下步骤循环：</h2>
-<blockquote>
-<p>1.设当前字符为c。如果mp[c]&gt;=left,则说明这个字符c是第二次出现在窗口中。那么left移动到上一个c的下一个位置，更新res。 2.否则，mp[c]=i； ### 时间复杂度o(n) ### 空间复杂度o(n) <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int lengthOfLongestSubstring(string s) &#123;</span><br><span class="line">        int size=s.size();</span><br><span class="line">        if(size==0) return 0;</span><br><span class="line">         vector&lt;int&gt;mp(128, -1);</span><br><span class="line">         int left=0,i=0,res=0;</span><br><span class="line">         for(;i&lt;size;i++)&#123;</span><br><span class="line">             char c=s[i];</span><br><span class="line">             if(mp[c]&gt;=left)&#123;</span><br><span class="line">                 res=max(res,i-left);</span><br><span class="line">                 left=mp[c]+1;</span><br><span class="line">             &#125;</span><br><span class="line">             mp[c]=i;</span><br><span class="line">         &#125;</span><br><span class="line">         return max(res,i-left);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/lc-add two nums/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/25/lc-add two nums/" itemprop="url">lc-add two nums</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T19:56:39+08:00">
-                2019-03-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="add-two-numbers">2.add two numbers</h1>
-<h2 id="基本思想从低位加到高位">基本思想：从低位加到高位，</h2>
-<h3 id="时间复杂度on">时间复杂度o(n)</h3>
-<h3 id="空间复杂度on">空间复杂度o(n)</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * struct ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode *next;</span><br><span class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">private:</span><br><span class="line">    int digital_add(int x,int y,int &amp;carry)&#123;</span><br><span class="line">        int t=x+y+carry;</span><br><span class="line">        if(t&gt;=10) &#123;</span><br><span class="line">            carry=1;</span><br><span class="line">            t-=10;</span><br><span class="line">        &#125;</span><br><span class="line">        else&#123;</span><br><span class="line">            carry=0;</span><br><span class="line">        &#125;</span><br><span class="line">        return t;</span><br><span class="line">    &#125;</span><br><span class="line">public:</span><br><span class="line">    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) &#123;</span><br><span class="line">        int carry=0,temp;</span><br><span class="line">        ListNode *p=new ListNode(digital_add(l1-&gt;val,l2-&gt;val,carry));</span><br><span class="line">        ListNode *h=p;</span><br><span class="line">        l1=l1-&gt;next;l2=l2-&gt;next;</span><br><span class="line">        while(l1&amp;&amp;l2)&#123;</span><br><span class="line">            h-&gt;next=new ListNode(digital_add(l1-&gt;val,l2-&gt;val,carry));</span><br><span class="line">            h=h-&gt;next;</span><br><span class="line">            l1=l1-&gt;next;l2=l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        if(l1==NULL&amp;&amp;l2==NULL&amp;&amp;carry==1) &#123;</span><br><span class="line">          h-&gt;next=new ListNode(1);</span><br><span class="line">        &#125;</span><br><span class="line">        if(l1)&#123;</span><br><span class="line">            h-&gt;next=l1;</span><br><span class="line">            while(l1)&#123;</span><br><span class="line">                l1-&gt;val=digital_add(l1-&gt;val,0,carry);</span><br><span class="line">                l1=l1-&gt;next;</span><br><span class="line">                h=h-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(l2)&#123;</span><br><span class="line">            h-&gt;next=l2;</span><br><span class="line">            while(l2)&#123;</span><br><span class="line">                l2-&gt;val=digital_add(l2-&gt;val,0,carry);</span><br><span class="line">                l2=l2-&gt;next;</span><br><span class="line">                h=h-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(carry) h-&gt;next=new ListNode(1);</span><br><span class="line">        return p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/lc-twosum/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/23/lc-twosum/" itemprop="url">lc-two sum</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T21:31:29+08:00">
-                2019-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="two-sum">1.two sum</h1>
-<h2 id="基本思想hashmap从头到尾扫描线性表每次遇到一个数num将其加入hashmap并且查看hashmaptarget-num是否已经在hashmap中">基本思想：hashmap，从头到尾扫描线性表，每次遇到一个数num将其加入hashmap，并且查看hashmap[target-num]是否已经在hashmap中</h2>
-<h3 id="时间复杂度on">时间复杂度o(n)</h3>
-<h3 id="空间复杂度on">空间复杂度o(n)</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) &#123;</span><br><span class="line">      unordered_map&lt;int,int&gt; m;</span><br><span class="line">      vector&lt;int&gt; ans;</span><br><span class="line">      for(int i=0;i&lt;nums.size();i++)&#123;</span><br><span class="line">        if(m.find(target-nums[i])!=m.end())&#123;</span><br><span class="line">          ans.push_back(i);</span><br><span class="line">          ans.push_back(m[target-nums[i]]);</span><br><span class="line">          return ans;</span><br><span class="line">        &#125;</span><br><span class="line">        m[nums[i]]=i;</span><br><span class="line">      &#125;      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/23/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/23/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-23T20:54:29+08:00">
-                2019-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+            <h1 id="6-zigzag-conversion"><a href="#6-zigzag-conversion" class="headerlink" title="6.zigzag conversion"></a>6.zigzag conversion</h1><h2 id="基本思想：找周期t-2-numRows-2-对称性；"><a href="#基本思想：找周期t-2-numRows-2-对称性；" class="headerlink" title="基本思想：找周期t=2*numRows-2;对称性；"></a>基本思想：找周期t=2*numRows-2;对称性；</h2><h2 id="时间复杂度o-n"><a href="#时间复杂度o-n" class="headerlink" title="时间复杂度o(n)"></a>时间复杂度o(n)</h2><h2 id="空间复杂度o-1"><a href="#空间复杂度o-1" class="headerlink" title="空间复杂度o(1)"></a>空间复杂度o(1)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    string convert(string s, int numRows) &#123;</span><br><span class="line">        if(numRows==1) return s;</span><br><span class="line">        int t=2*numRows-2;</span><br><span class="line">        string str=&quot;&quot;;</span><br><span class="line">        for(int i=0;i&lt;numRows;i++)&#123;</span><br><span class="line">            int pos1=i,pos2=t-i;</span><br><span class="line">            while(1)&#123;</span><br><span class="line">                if(pos1&gt;=s.size()) break;</span><br><span class="line">                str+=s[pos1];</span><br><span class="line">                pos1+=t;</span><br><span class="line">                if(i!=0&amp;&amp;i!=numRows-1)&#123;</span><br><span class="line">                    if(pos2&gt;=s.size()) break;</span><br><span class="line">                    str+=s[pos2];</span><br><span class="line">                    pos2+=t;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            return str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1340,7 +1422,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1386,7 +1468,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1399,7 +1481,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

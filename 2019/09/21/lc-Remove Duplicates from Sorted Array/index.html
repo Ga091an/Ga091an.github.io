@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="26.Remove Duplicates from Sorted Array 两个指针。i指示待插入位置，j寻找插入元素 time:o(n) space:o(1) 123456789101112class Solution &amp;#123;public:    int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;        int i=0">
+<meta name="description" content="26.Remove Duplicates from Sorted Array两个指针。i指示待插入位置，j寻找插入元素time:o(n)space:o(1)123456789101112class Solution &amp;#123;public:    int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;        int i=0,j;">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Remove Duplicates from Sorted Array">
 <meta property="og:url" content="http://yoursite.com/2019/09/21/lc-Remove Duplicates from Sorted Array/index.html">
 <meta property="og:site_name" content="谦的bolg">
-<meta property="og:description" content="26.Remove Duplicates from Sorted Array 两个指针。i指示待插入位置，j寻找插入元素 time:o(n) space:o(1) 123456789101112class Solution &amp;#123;public:    int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;        int i=0">
+<meta property="og:description" content="26.Remove Duplicates from Sorted Array两个指针。i指示待插入位置，j寻找插入元素time:o(n)space:o(1)123456789101112class Solution &amp;#123;public:    int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;        int i=0,j;">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-09-21T01:27:54.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Remove Duplicates from Sorted Array">
-<meta name="twitter:description" content="26.Remove Duplicates from Sorted Array 两个指针。i指示待插入位置，j寻找插入元素 time:o(n) space:o(1) 123456789101112class Solution &amp;#123;public:    int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;        int i=0">
+<meta name="twitter:description" content="26.Remove Duplicates from Sorted Array两个指针。i指示待插入位置，j寻找插入元素time:o(n)space:o(1)123456789101112class Solution &amp;#123;public:    int removeDuplicates(vector&amp;lt;int&amp;gt;&amp;amp; nums) &amp;#123;        int i=0,j;">
 
 
 
@@ -300,11 +300,7 @@
       
 
       
-        <h1 id="remove-duplicates-from-sorted-array">26.Remove Duplicates from Sorted Array</h1>
-<h2 id="两个指针i指示待插入位置j寻找插入元素">两个指针。i指示待插入位置，j寻找插入元素</h2>
-<h2 id="timeon">time:o(n)</h2>
-<h2 id="spaceo1">space:o(1)</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int removeDuplicates(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int i=0,j;</span><br><span class="line">        if(nums.size()==0) return 0;</span><br><span class="line">        for(j=0;j&lt;nums.size();j++)&#123;</span><br><span class="line">            if(nums[i]&lt;nums[j]) nums[++i]=nums[j];</span><br><span class="line">        &#125;</span><br><span class="line">        nums.resize(i+1);</span><br><span class="line">        return i+1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h1 id="26-Remove-Duplicates-from-Sorted-Array"><a href="#26-Remove-Duplicates-from-Sorted-Array" class="headerlink" title="26.Remove Duplicates from Sorted Array"></a>26.Remove Duplicates from Sorted Array</h1><h2 id="两个指针。i指示待插入位置，j寻找插入元素"><a href="#两个指针。i指示待插入位置，j寻找插入元素" class="headerlink" title="两个指针。i指示待插入位置，j寻找插入元素"></a>两个指针。i指示待插入位置，j寻找插入元素</h2><h2 id="time-o-n"><a href="#time-o-n" class="headerlink" title="time:o(n)"></a>time:o(n)</h2><h2 id="space-o-1"><a href="#space-o-1" class="headerlink" title="space:o(1)"></a>space:o(1)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int removeDuplicates(vector&lt;int&gt;&amp; nums) &#123;</span><br><span class="line">        int i=0,j;</span><br><span class="line">        if(nums.size()==0) return 0;</span><br><span class="line">        for(j=0;j&lt;nums.size();j++)&#123;</span><br><span class="line">            if(nums[i]&lt;nums[j]) nums[++i]=nums[j];</span><br><span class="line">        &#125;</span><br><span class="line">        nums.resize(i+1);</span><br><span class="line">        return i+1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -424,7 +420,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -437,7 +433,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -470,7 +466,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#remove-duplicates-from-sorted-array"><span class="nav-number">1.</span> <span class="nav-text">26.Remove Duplicates from Sorted Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#两个指针i指示待插入位置j寻找插入元素"><span class="nav-number">1.1.</span> <span class="nav-text">两个指针。i指示待插入位置，j寻找插入元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#timeon"><span class="nav-number">1.2.</span> <span class="nav-text">time:o(n)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spaceo1"><span class="nav-number">1.3.</span> <span class="nav-text">space:o(1)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#26-Remove-Duplicates-from-Sorted-Array"><span class="nav-number">1.</span> <span class="nav-text">26.Remove Duplicates from Sorted Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#两个指针。i指示待插入位置，j寻找插入元素"><span class="nav-number">1.1.</span> <span class="nav-text">两个指针。i指示待插入位置，j寻找插入元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time-o-n"><span class="nav-number">1.2.</span> <span class="nav-text">time:o(n)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#space-o-1"><span class="nav-number">1.3.</span> <span class="nav-text">space:o(1)</span></a></li></ol></li></ol></div>
             
 
           </div>

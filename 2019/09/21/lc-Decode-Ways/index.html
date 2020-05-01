@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="思路 思路一 将s看成是一个充满障碍的路，每个数字代表一个障碍，我们需要从左到右通过这条路，需要满足的条件是: * 一次只能越过一个或者两个障碍 * 越过的障碍在[1,26]之间 12Path s: _ 2 _ 2 _ 6 _Index:  0   1   2   3 对于上例，可能的路径就是0-&amp;gt;1-&amp;gt;2-&amp;gt;3、0-&amp;gt;2-&amp;gt;3、0-&amp;gt;1-&amp;gt;3。 所以我们">
+<meta name="description" content="思路思路一将s看成是一个充满障碍的路，每个数字代表一个障碍，我们需要从左到右通过这条路，需要满足的条件是:   一次只能越过一个或者两个障碍 越过的障碍在[1,26]之间12Path s: _ 2 _ 2 _ 6 _Index:  0   1   2   3   对于上例，可能的路径就是0-&amp;gt;1-&amp;gt;2-&amp;gt;3、0-&amp;gt;2-&amp;gt;3、0-&amp;gt;1-&amp;gt;3。所以我们可以通过">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lc-Decode Ways">
 <meta property="og:url" content="http://yoursite.com/2019/09/21/lc-Decode-Ways/index.html">
 <meta property="og:site_name" content="谦的bolg">
-<meta property="og:description" content="思路 思路一 将s看成是一个充满障碍的路，每个数字代表一个障碍，我们需要从左到右通过这条路，需要满足的条件是: * 一次只能越过一个或者两个障碍 * 越过的障碍在[1,26]之间 12Path s: _ 2 _ 2 _ 6 _Index:  0   1   2   3 对于上例，可能的路径就是0-&amp;gt;1-&amp;gt;2-&amp;gt;3、0-&amp;gt;2-&amp;gt;3、0-&amp;gt;1-&amp;gt;3。 所以我们">
+<meta property="og:description" content="思路思路一将s看成是一个充满障碍的路，每个数字代表一个障碍，我们需要从左到右通过这条路，需要满足的条件是:   一次只能越过一个或者两个障碍 越过的障碍在[1,26]之间12Path s: _ 2 _ 2 _ 6 _Index:  0   1   2   3   对于上例，可能的路径就是0-&amp;gt;1-&amp;gt;2-&amp;gt;3、0-&amp;gt;2-&amp;gt;3、0-&amp;gt;1-&amp;gt;3。所以我们可以通过">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-09-21T07:25:56.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lc-Decode Ways">
-<meta name="twitter:description" content="思路 思路一 将s看成是一个充满障碍的路，每个数字代表一个障碍，我们需要从左到右通过这条路，需要满足的条件是: * 一次只能越过一个或者两个障碍 * 越过的障碍在[1,26]之间 12Path s: _ 2 _ 2 _ 6 _Index:  0   1   2   3 对于上例，可能的路径就是0-&amp;gt;1-&amp;gt;2-&amp;gt;3、0-&amp;gt;2-&amp;gt;3、0-&amp;gt;1-&amp;gt;3。 所以我们">
+<meta name="twitter:description" content="思路思路一将s看成是一个充满障碍的路，每个数字代表一个障碍，我们需要从左到右通过这条路，需要满足的条件是:   一次只能越过一个或者两个障碍 越过的障碍在[1,26]之间12Path s: _ 2 _ 2 _ 6 _Index:  0   1   2   3   对于上例，可能的路径就是0-&amp;gt;1-&amp;gt;2-&amp;gt;3、0-&amp;gt;2-&amp;gt;3、0-&amp;gt;1-&amp;gt;3。所以我们可以通过">
 
 
 
@@ -300,19 +300,22 @@
       
 
       
-        <h1 id="思路">思路</h1>
-<h2 id="思路一">思路一</h2>
-<p>将<code>s</code>看成是一个充满障碍的路，每个数字代表一个障碍，我们需要从左到右通过这条路，需要满足的条件是: * 一次只能越过一个或者两个障碍 * 越过的障碍在[1,26]之间 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Path s: _ 2 _ 2 _ 6 _</span><br><span class="line">Index:  0   1   2   3</span><br></pre></td></tr></table></figure></p>
-<p>对于上例，可能的路径就是<code>0-&gt;1-&gt;2-&gt;3</code>、<code>0-&gt;2-&gt;3</code>、<code>0-&gt;1-&gt;3</code>。 所以我们可以通过动态规划解此题，开辟一个大小为<code>s.size()+1</code>的数组<code>dp</code>, <code>dp[i]</code>代表从最左边(index=0)到达index=i的所有情况数，最终所求即dp的最后一个元素。所以<code>dp[0]</code>初始为1, 有两种方式可到达i: 1. 从i-1越过障碍<code>s[i-1]</code>到达i； 2. 从i-2越过障碍<code>s[i-2]</code>和<code>s[i-1]</code>到达i；</p>
+        <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h2 id="思路一"><a href="#思路一" class="headerlink" title="思路一"></a>思路一</h2><p>将<code>s</code>看成是一个充满障碍的路，每个数字代表一个障碍，我们需要从左到右通过这条路，需要满足的条件是: </p>
+<ul>
+<li>一次只能越过一个或者两个障碍</li>
+<li>越过的障碍在[1,26]之间<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Path s: _ 2 _ 2 _ 6 _</span><br><span class="line">Index:  0   1   2   3</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>对于上例，可能的路径就是<code>0-&gt;1-&gt;2-&gt;3</code>、<code>0-&gt;2-&gt;3</code>、<code>0-&gt;1-&gt;3</code>。<br>所以我们可以通过动态规划解此题，开辟一个大小为<code>s.size()+1</code>的数组<code>dp</code>, <code>dp[i]</code>代表从最左边(index=0)到达index=i的所有情况数，最终所求即dp的最后一个元素。所以<code>dp[0]</code>初始为1, 有两种方式可到达i:</p>
+<ol>
+<li>从i-1越过障碍<code>s[i-1]</code>到达i；</li>
+<li>从i-2越过障碍<code>s[i-2]</code>和<code>s[i-1]</code>到达i；</li>
+</ol>
 <p>情况1需要满足的条件是<code>s[i - 1] != 0</code>，情况2需要满足的条件是<code>s[i-2]</code>和<code>s[i-1]</code>组成的数字属于[1,26]</p>
-<h2 id="思路二">思路二</h2>
-<p>仔细分析思路一发现，我们每次循环只需要用到<code>dp[i]</code>、<code>dp[i - 1]</code>和<code>dp[i - 2]</code>，所以我们没必要开辟一个dp数组，而用<code>cur</code>、<code>pre</code>和<code>pre_pre</code>分别代表<code>dp[i]</code>、<code>dp[i - 1]</code>和<code>dp[i - 2]</code>就可以了。</p>
+<h2 id="思路二"><a href="#思路二" class="headerlink" title="思路二"></a>思路二</h2><p>仔细分析思路一发现，我们每次循环只需要用到<code>dp[i]</code>、<code>dp[i - 1]</code>和<code>dp[i - 2]</code>，所以我们没必要开辟一个dp数组，而用<code>cur</code>、<code>pre</code>和<code>pre_pre</code>分别代表<code>dp[i]</code>、<code>dp[i - 1]</code>和<code>dp[i - 2]</code>就可以了。</p>
 <p>时间复杂度O(n)，空间复杂度O(1)</p>
-<h2 id="思路一-1">思路一</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int numDecodings(string s) &#123;</span><br><span class="line">        int n=s.size();</span><br><span class="line">        if(n==0) return 0;</span><br><span class="line">        vector&lt;int&gt; dp(n+1,0);</span><br><span class="line">        if(s[0]&gt;&apos;0&apos;) dp[0]=1;</span><br><span class="line">        for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">            if(i-1&gt;=0&amp;&amp;s[i-1]&gt;&apos;0&apos;) dp[i]+=dp[i-1];</span><br><span class="line">            if(i-2&gt;=0&amp;&amp;s[i-2]&gt;&apos;2&apos;) continue;</span><br><span class="line">            if(i-2&gt;=0&amp;&amp;(s[i-2]==&apos;1&apos;)) dp[i]+=dp[i-2];</span><br><span class="line">            else if(i-2&gt;=0&amp;&amp;(s[i-2]==&apos;2&apos;&amp;&amp;s[i-1]&lt;&apos;7&apos;)) dp[i]+=dp[i-2];</span><br><span class="line">        &#125;</span><br><span class="line">        return dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="思路二-1">思路二</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int numDecodings(string s) &#123;</span><br><span class="line">        int n=s.size();</span><br><span class="line">        if(n==0) return 0;</span><br><span class="line">        int cur=1,pre=0,pre_pre=1;</span><br><span class="line">        if(s[0]&gt;&apos;0&apos;) pre=1;</span><br><span class="line">        for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">            pre_pre=pre;</span><br><span class="line">            pre=cur;</span><br><span class="line">            cur=0;</span><br><span class="line">            if(i-1&gt;=0&amp;&amp;s[i-1]&gt;&apos;0&apos;) cur+=pre;</span><br><span class="line">            if(i-2&gt;=0&amp;&amp;s[i-2]&gt;&apos;2&apos;) continue;</span><br><span class="line">            if(i-2&gt;=0&amp;&amp;(s[i-2]==&apos;1&apos;)) cur+=pre_pre;</span><br><span class="line">            else if(i-2&gt;=0&amp;&amp;(s[i-2]==&apos;2&apos;&amp;&amp;s[i-1]&lt;&apos;7&apos;)) cur+=pre_pre;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        return cur;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+<h2 id="思路一-1"><a href="#思路一-1" class="headerlink" title="思路一"></a>思路一</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int numDecodings(string s) &#123;</span><br><span class="line">        int n=s.size();</span><br><span class="line">        if(n==0) return 0;</span><br><span class="line">        vector&lt;int&gt; dp(n+1,0);</span><br><span class="line">        if(s[0]&gt;&apos;0&apos;) dp[0]=1;</span><br><span class="line">        for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">            if(i-1&gt;=0&amp;&amp;s[i-1]&gt;&apos;0&apos;) dp[i]+=dp[i-1];</span><br><span class="line">            if(i-2&gt;=0&amp;&amp;s[i-2]&gt;&apos;2&apos;) continue;</span><br><span class="line">            if(i-2&gt;=0&amp;&amp;(s[i-2]==&apos;1&apos;)) dp[i]+=dp[i-2];</span><br><span class="line">            else if(i-2&gt;=0&amp;&amp;(s[i-2]==&apos;2&apos;&amp;&amp;s[i-1]&lt;&apos;7&apos;)) dp[i]+=dp[i-2];</span><br><span class="line">        &#125;</span><br><span class="line">        return dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="思路二-1"><a href="#思路二-1" class="headerlink" title="思路二"></a>思路二</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int numDecodings(string s) &#123;</span><br><span class="line">        int n=s.size();</span><br><span class="line">        if(n==0) return 0;</span><br><span class="line">        int cur=1,pre=0,pre_pre=1;</span><br><span class="line">        if(s[0]&gt;&apos;0&apos;) pre=1;</span><br><span class="line">        for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">            pre_pre=pre;</span><br><span class="line">            pre=cur;</span><br><span class="line">            cur=0;</span><br><span class="line">            if(i-1&gt;=0&amp;&amp;s[i-1]&gt;&apos;0&apos;) cur+=pre;</span><br><span class="line">            if(i-2&gt;=0&amp;&amp;s[i-2]&gt;&apos;2&apos;) continue;</span><br><span class="line">            if(i-2&gt;=0&amp;&amp;(s[i-2]==&apos;1&apos;)) cur+=pre_pre;</span><br><span class="line">            else if(i-2&gt;=0&amp;&amp;(s[i-2]==&apos;2&apos;&amp;&amp;s[i-1]&lt;&apos;7&apos;)) cur+=pre_pre;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        return cur;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -431,7 +434,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -444,7 +447,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

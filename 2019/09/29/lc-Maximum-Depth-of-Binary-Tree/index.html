@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="思路 对树进行递归遍历的时候更新下max_depth就行了。 12345678910111213141516171819202122232425 * Definition for a binary tree node. * struct TreeNode &amp;#123; *     int val; *     TreeNode *left; *     TreeNode *right; *">
+<meta name="description" content="思路对树进行递归遍历的时候更新下max_depth就行了。 12345678910111213141516171819202122232425 * Definition for a binary tree node. * struct TreeNode &amp;#123; *     int val; *     TreeNode *left; *     TreeNode *right; *">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lc-Maximum Depth of Binary Tree">
 <meta property="og:url" content="http://yoursite.com/2019/09/29/lc-Maximum-Depth-of-Binary-Tree/index.html">
 <meta property="og:site_name" content="谦的bolg">
-<meta property="og:description" content="思路 对树进行递归遍历的时候更新下max_depth就行了。 12345678910111213141516171819202122232425 * Definition for a binary tree node. * struct TreeNode &amp;#123; *     int val; *     TreeNode *left; *     TreeNode *right; *">
+<meta property="og:description" content="思路对树进行递归遍历的时候更新下max_depth就行了。 12345678910111213141516171819202122232425 * Definition for a binary tree node. * struct TreeNode &amp;#123; *     int val; *     TreeNode *left; *     TreeNode *right; *">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-10-05T01:26:39.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lc-Maximum Depth of Binary Tree">
-<meta name="twitter:description" content="思路 对树进行递归遍历的时候更新下max_depth就行了。 12345678910111213141516171819202122232425 * Definition for a binary tree node. * struct TreeNode &amp;#123; *     int val; *     TreeNode *left; *     TreeNode *right; *">
+<meta name="twitter:description" content="思路对树进行递归遍历的时候更新下max_depth就行了。 12345678910111213141516171819202122232425 * Definition for a binary tree node. * struct TreeNode &amp;#123; *     int val; *     TreeNode *left; *     TreeNode *right; *">
 
 
 
@@ -300,8 +300,7 @@
       
 
       
-        <h1 id="思路">思路</h1>
-<p>对树进行递归遍历的时候更新下max_depth就行了。</p>
+        <h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>对树进行递归遍历的时候更新下max_depth就行了。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * struct TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode *left;</span><br><span class="line"> *     TreeNode *right;</span><br><span class="line"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span><br><span class="line"> * &#125;;</span><br><span class="line"> */</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    void DFS(TreeNode* root,int level,int&amp; max_depth)&#123;</span><br><span class="line">        if(root==NULL) return;</span><br><span class="line">        level++;</span><br><span class="line">        if(level&gt;max_depth) max_depth=level;</span><br><span class="line">        DFS(root-&gt;left,level,max_depth);</span><br><span class="line">        DFS(root-&gt;right,level,max_depth);</span><br><span class="line">    &#125;</span><br><span class="line">    int maxDepth(TreeNode* root) &#123;</span><br><span class="line">        if(root==NULL) return 0;</span><br><span class="line">        int max_depth=1;</span><br><span class="line">        int level=0;</span><br><span class="line">        DFS(root,level,max_depth);</span><br><span class="line">        return max_depth;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
@@ -422,7 +421,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -435,7 +434,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

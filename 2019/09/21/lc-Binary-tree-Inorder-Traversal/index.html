@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="94. Binary Tree Inorder Traversal 要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。 time：？ space：？ 123456789101112131415161718192021class Solution &amp;">
+<meta name="description" content="94. Binary Tree Inorder Traversal要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。time：？space：？123456789101112131415161718192021class Solution &amp;#123">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lc-Binary tree Inorder Traversal">
 <meta property="og:url" content="http://yoursite.com/2019/09/21/lc-Binary-tree-Inorder-Traversal/index.html">
 <meta property="og:site_name" content="谦的bolg">
-<meta property="og:description" content="94. Binary Tree Inorder Traversal 要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。 time：？ space：？ 123456789101112131415161718192021class Solution &amp;">
+<meta property="og:description" content="94. Binary Tree Inorder Traversal要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。time：？space：？123456789101112131415161718192021class Solution &amp;#123">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-09-21T07:51:44.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lc-Binary tree Inorder Traversal">
-<meta name="twitter:description" content="94. Binary Tree Inorder Traversal 要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。 time：？ space：？ 123456789101112131415161718192021class Solution &amp;">
+<meta name="twitter:description" content="94. Binary Tree Inorder Traversal要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。time：？space：？123456789101112131415161718192021class Solution &amp;#123">
 
 
 
@@ -300,11 +300,7 @@
       
 
       
-        <h1 id="binary-tree-inorder-traversal">94. Binary Tree Inorder Traversal</h1>
-<h2 id="要求是非递归来写先定义一个栈stk从根结点开始只要stk非空或者p指向非空结点开始循环将p及其左子树结点不断入栈直至p指向空结点然后stk出栈一个元素访问然后将其右子树入栈继续循环">要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。</h2>
-<h3 id="time">time：？</h3>
-<h3 id="space">space：？</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; res;</span><br><span class="line">        stack&lt;TreeNode *&gt; stk;</span><br><span class="line">        TreeNode *p=root;</span><br><span class="line">        while(!stk.empty()||p)&#123;</span><br><span class="line">            if(p)&#123;</span><br><span class="line">                stk.push(p);</span><br><span class="line">                p=p-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                p=stk.top();</span><br><span class="line">                stk.pop();</span><br><span class="line">                res.push_back(p-&gt;val);</span><br><span class="line">                p=p-&gt;right;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h1 id="94-Binary-Tree-Inorder-Traversal"><a href="#94-Binary-Tree-Inorder-Traversal" class="headerlink" title="94. Binary Tree Inorder Traversal"></a>94. Binary Tree Inorder Traversal</h1><h2 id="要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。"><a href="#要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。" class="headerlink" title="要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。"></a>要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。</h2><h3 id="time：？"><a href="#time：？" class="headerlink" title="time：？"></a>time：？</h3><h3 id="space：？"><a href="#space：？" class="headerlink" title="space：？"></a>space：？</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; res;</span><br><span class="line">        stack&lt;TreeNode *&gt; stk;</span><br><span class="line">        TreeNode *p=root;</span><br><span class="line">        while(!stk.empty()||p)&#123;</span><br><span class="line">            if(p)&#123;</span><br><span class="line">                stk.push(p);</span><br><span class="line">                p=p-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                p=stk.top();</span><br><span class="line">                stk.pop();</span><br><span class="line">                res.push_back(p-&gt;val);</span><br><span class="line">                p=p-&gt;right;</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -424,7 +420,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -437,7 +433,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -470,7 +466,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#binary-tree-inorder-traversal"><span class="nav-number">1.</span> <span class="nav-text">94. Binary Tree Inorder Traversal</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要求是非递归来写先定义一个栈stk从根结点开始只要stk非空或者p指向非空结点开始循环将p及其左子树结点不断入栈直至p指向空结点然后stk出栈一个元素访问然后将其右子树入栈继续循环"><span class="nav-number">1.1.</span> <span class="nav-text">要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#time"><span class="nav-number">1.1.1.</span> <span class="nav-text">time：？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#space"><span class="nav-number">1.1.2.</span> <span class="nav-text">space：？</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#94-Binary-Tree-Inorder-Traversal"><span class="nav-number">1.</span> <span class="nav-text">94. Binary Tree Inorder Traversal</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。"><span class="nav-number">1.1.</span> <span class="nav-text">要求是非递归来写。先定义一个栈stk，从根结点开始。只要stk非空或者p指向非空结点，开始循环：将p及其左子树结点不断入栈，直至p指向空结点。然后stk出栈一个元素，访问，然后将其右子树入栈，继续循环。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#time：？"><span class="nav-number">1.1.1.</span> <span class="nav-text">time：？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#space：？"><span class="nav-number">1.1.2.</span> <span class="nav-text">space：？</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
