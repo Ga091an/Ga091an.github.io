@@ -229,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/07/队列的最大值/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/25/栈的压入弹出序列/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GQ">
@@ -248,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/07/队列的最大值/" itemprop="url">队列的最大值</a></h1>
+                <a class="post-title-link" href="/2020/05/25/栈的压入弹出序列/" itemprop="url">栈的压入弹出序列</a></h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-07T22:25:41+08:00">
-                2020-05-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-25T16:52:16+08:00">
+                2020-05-25
               </time>
             
 
@@ -300,7 +300,8 @@
       
         
           
-            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MaxQueue</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    MaxQueue():currentIndex(<span class="number">0</span>) &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">max_value</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(maximums.empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">return</span> maximums.front().number;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push_back</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 注意是&gt;=</span></span><br><span class="line">        <span class="keyword">while</span>(!maximums.empty()&amp;&amp;value&gt;=maximums.back().number)</span><br><span class="line">            maximums.pop_back();</span><br><span class="line">        </span><br><span class="line">        myData _myData=&#123;value,currentIndex&#125;;</span><br><span class="line">        data.push_back(_myData);</span><br><span class="line">        maximums.push_back(_myData);</span><br><span class="line">        ++currentIndex;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pop_front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(maximums.empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="comment">// 此时要出栈的数字和最大对列的头部数字相等</span></span><br><span class="line">        <span class="keyword">if</span>(maximums.front().index==data.front().index)</span><br><span class="line">            maximums.pop_front();</span><br><span class="line">        <span class="keyword">int</span> val=data.front().number;</span><br><span class="line">        data.pop_front();</span><br><span class="line">        <span class="keyword">return</span> val;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">    <span class="comment">//number是值</span></span><br><span class="line">    <span class="comment">//index记录入栈的次序，可以理解为id</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">myData</span>&#123;</span></span><br><span class="line">        <span class="keyword">int</span> number;</span><br><span class="line">        <span class="keyword">int</span> index;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">deque</span>&lt;myData&gt; data;</span><br><span class="line">    <span class="built_in">deque</span>&lt;myData&gt; maximums;</span><br><span class="line">    <span class="keyword">int</span> currentIndex;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MaxQueue object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MaxQueue* obj = new MaxQueue();</span></span><br><span class="line"><span class="comment"> * int param_1 = obj-&gt;max_value();</span></span><br><span class="line"><span class="comment"> * obj-&gt;push_back(value);</span></span><br><span class="line"><span class="comment"> * int param_3 = obj-&gt;pop_front();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+            <h1 id="用辅助空间"><a href="#用辅助空间" class="headerlink" title="用辅助空间"></a>用辅助空间</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">validateStackSequences</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; pushed, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; popped)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>,n=pushed.size();</span><br><span class="line">        <span class="keyword">if</span>(popped.size()!=n) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;n)&#123;</span><br><span class="line">            s.push(pushed[i]);</span><br><span class="line">            <span class="keyword">while</span>(!s.empty()&amp;&amp;s.top()==popped[j])&#123;</span><br><span class="line">                s.pop();</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(s.empty()&amp;&amp;j==n) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="不用辅助空间"><a href="#不用辅助空间" class="headerlink" title="不用辅助空间"></a>不用辅助空间</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">validateStackSequences</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; pushed, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; popped)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// stack&lt;int&gt; s;</span></span><br><span class="line">        <span class="keyword">int</span> top=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>,j=<span class="number">0</span>,n=pushed.size();</span><br><span class="line">        <span class="keyword">if</span>(popped.size()!=n) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;n)&#123;</span><br><span class="line">            pushed[++top]=pushed[i];</span><br><span class="line">            <span class="keyword">while</span>(top!=<span class="number">-1</span>&amp;&amp;pushed[top]==popped[j])&#123;</span><br><span class="line">                top--;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(top==<span class="number">-1</span>&amp;&amp;j==n) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -349,7 +350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/07/树莓派设置静态ip地址/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/25/合并两个排序的链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GQ">
@@ -368,7 +369,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/07/树莓派设置静态ip地址/" itemprop="url">树莓派设置静态ip地址</a></h1>
+                <a class="post-title-link" href="/2020/05/25/合并两个排序的链表/" itemprop="url">合并两个排序的链表</a></h1>
         
 
         <div class="post-meta">
@@ -380,8 +381,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-07T17:05:18+08:00">
-                2020-05-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-25T15:54:59+08:00">
+                2020-05-25
               </time>
             
 
@@ -420,13 +421,126 @@
       
         
           
-            <p>输入</p>
-<blockquote>
-<p>sudo vi /etc/dhcpcd.conf</p>
-<p>interface eth0<br>static ip_address=192.168.0.10/24<br>static routers=192.168.0.1<br>static domain_name_servers=192.168.0.1<br>interface wlan0<br>static ip_address=192.168.0.200/24<br>static routers=192.168.0.1<br>static domain_name_servers=192.168.0.1</p>
-</blockquote>
-<p>其中，<strong>eth0</strong>是有线的配置，<strong>wlan0</strong>是无线配置<br><strong>ip_address</strong>就是静态IP，后面要接/24<br><strong>routers</strong>是网关<br><strong>static domain_name_servers</strong>是DNS</p>
-<p>然后重启</p>
+            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</span><br><span class="line">        ListNode* fakeHead=<span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        ListNode* p=fakeHead;</span><br><span class="line">        <span class="keyword">while</span>(l1&amp;&amp;l2)&#123;</span><br><span class="line">            <span class="keyword">if</span>(l1-&gt;val&lt;=l2-&gt;val)&#123;</span><br><span class="line">                p-&gt;next=l1;</span><br><span class="line">                l1=l1-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                p-&gt;next=l2;</span><br><span class="line">                l2=l2-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 统一操作</span></span><br><span class="line">        <span class="keyword">if</span>(l2) l1=l2;</span><br><span class="line">        p-&gt;next=l1;</span><br><span class="line">        <span class="keyword">return</span> fakeHead-&gt;next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/25/调整数组顺序使奇数位于偶数前面/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/25/调整数组顺序使奇数位于偶数前面/" itemprop="url">调整数组顺序使奇数位于偶数前面</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-25T15:26:46+08:00">
+                2020-05-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; exchange(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="keyword">int</span> n=nums.size();</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>) <span class="keyword">return</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;();</span><br><span class="line">        <span class="keyword">int</span> p=<span class="number">0</span>,q=n<span class="number">-1</span>,pivot=nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">while</span>(p&lt;q)&#123;</span><br><span class="line">            <span class="comment">// 不知道为什么用nums[q]&amp;1==0不行 答案：要加括号</span></span><br><span class="line">            <span class="keyword">while</span>(p&lt;q&amp;&amp;nums[q]%<span class="number">2</span>==<span class="number">0</span>) q--;</span><br><span class="line">            nums[p]=nums[q];</span><br><span class="line">            <span class="keyword">while</span>(p&lt;q&amp;&amp;nums[p]%<span class="number">2</span>==<span class="number">1</span>) p++;</span><br><span class="line">            nums[q]=nums[p];</span><br><span class="line">        &#125;</span><br><span class="line">        nums[p]=pivot;</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -475,7 +589,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/06/包含min函数的栈/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/25/表示数值的字符串/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GQ">
@@ -494,7 +608,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/06/包含min函数的栈/" itemprop="url">包含min函数的栈</a></h1>
+                <a class="post-title-link" href="/2020/05/25/表示数值的字符串/" itemprop="url">表示数值的字符串</a></h1>
         
 
         <div class="post-meta">
@@ -506,8 +620,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-06T22:50:01+08:00">
-                2020-05-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-25T12:26:39+08:00">
+                2020-05-25
               </time>
             
 
@@ -546,7 +660,7 @@
       
         
           
-            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">    MinStack() &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.empty())&#123;</span><br><span class="line">            s.push(x);</span><br><span class="line">            s.push(x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">int</span> val=<span class="built_in">std</span>::min(s.top(),x);</span><br><span class="line">            s.push(x);</span><br><span class="line">            s.push(val);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!s.empty())&#123;</span><br><span class="line">            s.pop();</span><br><span class="line">            s.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> top=s.top();</span><br><span class="line">        s.pop();</span><br><span class="line">        <span class="keyword">int</span> val=s.top();</span><br><span class="line">        s.push(top);</span><br><span class="line">        <span class="keyword">return</span> val;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">min</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> s.top();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MinStack object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MinStack* obj = new MinStack();</span></span><br><span class="line"><span class="comment"> * obj-&gt;push(x);</span></span><br><span class="line"><span class="comment"> * obj-&gt;pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj-&gt;top();</span></span><br><span class="line"><span class="comment"> * int param_4 = obj-&gt;min();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isNumber</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.size()==<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>,n=s.size()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;=n&amp;&amp;s[i]==<span class="string">' '</span>) i++;</span><br><span class="line">        <span class="keyword">while</span>(n&gt;=<span class="number">0</span>&amp;&amp;s[n]==<span class="string">' '</span>) n--;</span><br><span class="line">        <span class="keyword">bool</span> flag=scanInteger(s,i);</span><br><span class="line">        <span class="keyword">if</span>(i&lt;s.size()&amp;&amp;s[i]==<span class="string">'.'</span>)&#123;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="comment">//注意顺序，a||b 如果a==true 那么b就不会执行了</span></span><br><span class="line">            <span class="comment">//这里是 unsigned</span></span><br><span class="line">            flag=scanUnsignedInteger(s,i)||flag;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i&lt;s.size()&amp;&amp;s[i]==<span class="string">'e'</span>)&#123;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="comment">//这里是signed</span></span><br><span class="line">            flag=scanInteger(s,i)&amp;&amp;flag;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> flag&amp;&amp;i==(n+<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">scanInteger</span><span class="params">(<span class="built_in">string</span> s,<span class="keyword">int</span>&amp; i)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i]==<span class="string">'+'</span>||s[i]==<span class="string">'-'</span>) i++;</span><br><span class="line">        <span class="keyword">return</span> scanUnsignedInteger(s,i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">scanUnsignedInteger</span><span class="params">(<span class="built_in">string</span> s,<span class="keyword">int</span>&amp; i)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> tmp=i;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;s.size()&amp;&amp;<span class="string">'0'</span>&lt;=s[i]&amp;&amp;s[i]&lt;=<span class="string">'9'</span>)</span><br><span class="line">            i++;</span><br><span class="line">        <span class="keyword">return</span> i-tmp&gt;<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -595,7 +709,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/06/用两个栈实现队列/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/25/正则表达式匹配/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GQ">
@@ -614,7 +728,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/06/用两个栈实现队列/" itemprop="url">用两个栈实现队列</a></h1>
+                <a class="post-title-link" href="/2020/05/25/正则表达式匹配/" itemprop="url">正则表达式匹配</a></h1>
         
 
         <div class="post-meta">
@@ -626,8 +740,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-06T22:34:06+08:00">
-                2020-05-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-25T10:17:23+08:00">
+                2020-05-25
               </time>
             
 
@@ -666,620 +780,258 @@
       
         
           
-            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CQueue</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    CQueue() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">appendTail</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        s1.push(value);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">deleteHead</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s1.empty()&amp;&amp;s2.empty()) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">if</span>(!s2.empty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> val=s2.top();</span><br><span class="line">            s2.pop();</span><br><span class="line">            <span class="keyword">return</span> val;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">while</span>(!s1.empty())&#123;</span><br><span class="line">                s2.push(s1.top());</span><br><span class="line">                s1.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> deleteHead();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s1;</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s2;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your CQueue object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * CQueue* obj = new CQueue();</span></span><br><span class="line"><span class="comment"> * obj-&gt;appendTail(value);</span></span><br><span class="line"><span class="comment"> * int param_2 = obj-&gt;deleteHead();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/06/滑动窗口的最大值/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/06/滑动窗口的最大值/" itemprop="url">滑动窗口的最大值</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-06T22:01:54+08:00">
-                2020-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; maxSlidingWindow(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">int</span> n=nums.size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">if</span>(k&gt;n||k&lt;=<span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">        <span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; dq;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">            <span class="keyword">while</span>(!dq.empty()&amp;&amp;nums[i]&gt;=nums[dq.back()])</span><br><span class="line">                dq.pop_back();</span><br><span class="line">            dq.push_back(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=k;i&lt;n;i++)&#123;</span><br><span class="line">            res.push_back(nums[dq.front()]);</span><br><span class="line">            <span class="keyword">while</span>(!dq.empty()&amp;&amp;nums[i]&gt;=nums[dq.back()])</span><br><span class="line">                dq.pop_back();</span><br><span class="line">            <span class="keyword">if</span>(!dq.empty()&amp;&amp;dq.front()+k&lt;=i)</span><br><span class="line">                dq.pop_front();</span><br><span class="line">            dq.push_back(i);</span><br><span class="line">        &#125;</span><br><span class="line">        res.push_back(nums[dq.front()]);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// q1&lt;q2&lt;q3</span></span><br><span class="line"><span class="comment">// index(q1)+k&gt;i</span></span><br><span class="line"><span class="comment">// 为什么!dq.empty()&amp;&amp;nums[i]&gt;=nums[dq.back()]时要popback？</span></span><br><span class="line"><span class="comment">// 假设当前队列[3,-1]，nums[i]=4</span></span><br><span class="line"><span class="comment">// -1不出队列，那么队列变成[3,-1,4]</span></span><br><span class="line"><span class="comment">// 往前，-1不可能是滑动窗口里的最大值，往后也不可能</span></span><br><span class="line"><span class="comment">// 所以-1要出栈</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/06/二叉搜索树的最近公共祖先/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/06/二叉搜索树的最近公共祖先/" itemprop="url">二叉搜索树的最近公共祖先</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-06T21:05:33+08:00">
-                2020-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode* root, TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a=min(p-&gt;val,q-&gt;val),b=root-&gt;val,c=max(p-&gt;val,q-&gt;val);</span><br><span class="line">        <span class="keyword">if</span>(a&lt;=b&amp;&amp;b&lt;=c) <span class="keyword">return</span> root;</span><br><span class="line">        <span class="keyword">if</span>(b&lt;a) <span class="keyword">return</span> lowestCommonAncestor(root-&gt;right,p,q);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> lowestCommonAncestor(root-&gt;left,p,q);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/05/二叉搜索树的第k大节点/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/05/二叉搜索树的第k大节点/" itemprop="url">二叉搜索树的第k大节点</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-05T21:07:12+08:00">
-                2020-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="非递归遍历（中序）"><a href="#非递归遍历（中序）" class="headerlink" title="非递归遍历（中序）"></a>非递归遍历（中序）</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">kthLargest</span><span class="params">(TreeNode* root, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">nullptr</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="built_in">stack</span>&lt;TreeNode*&gt; s;</span><br><span class="line">        <span class="keyword">int</span> ct=<span class="number">0</span>;</span><br><span class="line">        TreeNode* p=root;</span><br><span class="line">        s.push(root);</span><br><span class="line">        <span class="keyword">while</span>(p||!s.empty())&#123;</span><br><span class="line">            <span class="keyword">if</span>(p)&#123;</span><br><span class="line">                <span class="comment">// ct++;</span></span><br><span class="line">                <span class="comment">// if(ct==k) return p-&gt;val;</span></span><br><span class="line">                s.push(p);</span><br><span class="line">                p=p-&gt;right;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                p=s.top();</span><br><span class="line">                ct++;</span><br><span class="line">                <span class="keyword">if</span>(ct==k) <span class="keyword">return</span> p-&gt;val;</span><br><span class="line">                s.pop();</span><br><span class="line">                p=p-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">kthLargest</span><span class="params">(TreeNode* root, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        help(root,k);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">help</span><span class="params">(TreeNode* root,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root!=<span class="literal">nullptr</span>)&#123;</span><br><span class="line">        help(root-&gt;right,k);</span><br><span class="line">        visit(root,k);</span><br><span class="line">        help(root-&gt;left,k);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">visit</span><span class="params">(TreeNode* root,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">        th++;</span><br><span class="line">        <span class="keyword">if</span>(th==k) ans=root-&gt;val;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">int</span> th=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/05/二叉树中和为某一值的路径/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/05/二叉树中和为某一值的路径/" itemprop="url">二叉树中和为某一值的路径</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-05T19:10:07+08:00">
-                2020-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; pathSum(TreeNode* root, <span class="keyword">int</span> sum) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; res;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; track;</span><br><span class="line">        backtrack(root,sum,res,track);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(TreeNode* root,<span class="keyword">int</span> sum,<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; res,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; track)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">nullptr</span>) <span class="keyword">return</span>;</span><br><span class="line">        <span class="comment">//入栈</span></span><br><span class="line">        track.push_back(root-&gt;val);</span><br><span class="line">        <span class="keyword">if</span>(root-&gt;val==sum&amp;&amp;root-&gt;left==<span class="literal">nullptr</span>&amp;&amp;root-&gt;right==<span class="literal">nullptr</span>)&#123;</span><br><span class="line">            res.push_back(track);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        backtrack(root-&gt;left,sum-root-&gt;val,res,track);</span><br><span class="line">        backtrack(root-&gt;right,sum-root-&gt;val,res,track);</span><br><span class="line">        <span class="comment">//出栈</span></span><br><span class="line">        track.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/05/树莓派更新源/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="GQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谦的bolg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/05/树莓派更新源/" itemprop="url">树莓派更新源</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-05T18:49:43+08:00">
-                2020-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="软件源"><a href="#软件源" class="headerlink" title="软件源"></a>软件源</h1><p>软件源是指 debian 系操作系统的应用程序安装包仓库，很多的软件都会这收录到这个仓库里面。而树莓派的 raspberrypi 操作系统也是基于 debian 的，所以树莓派也有自己的软件源，用来收录各种树莓派应用程序。</p>
+            <h1 id="递归-会超时"><a href="#递归-会超时" class="headerlink" title="递归 会超时"></a>递归 会超时</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isMatch</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> p)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// if(s.size()==0||p.size()==0) </span></span><br><span class="line">        <span class="comment">//     return false;</span></span><br><span class="line">        <span class="keyword">return</span> helper(s,p,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">helper</span><span class="params">(<span class="built_in">string</span> s,<span class="built_in">string</span> p,<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m=s.size();</span><br><span class="line">        <span class="keyword">int</span> n=p.size();</span><br><span class="line">        <span class="keyword">bool</span> res=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;=m)&#123;</span><br><span class="line">            <span class="keyword">if</span>(j&gt;=n) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(j==n<span class="number">-1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(p[j+<span class="number">1</span>]==<span class="string">'*'</span>&amp;&amp;j+<span class="number">2</span>==n) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j&gt;=n) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">bool</span> match=(s[i]==p[j]||p[j]==<span class="string">'.'</span>);</span><br><span class="line">        <span class="keyword">if</span>(j+<span class="number">1</span>&lt;n&amp;&amp;p[j+<span class="number">1</span>]==<span class="string">'*'</span>)&#123;</span><br><span class="line">            res=helper(s,p,i,j+<span class="number">2</span>)||(match&amp;&amp;helper(s,p,i+<span class="number">1</span>,j));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            res=match&amp;&amp;helper(s,p,i+<span class="number">1</span>,j+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="dp"><a href="#dp" class="headerlink" title="dp"></a>dp</h1><h2 id="转移方程"><a href="#转移方程" class="headerlink" title="转移方程"></a>转移方程</h2><p>f[i][j] 代表 A 的前 i 个和 B 的前 j 个能否匹配,在(i,j)状态下，有三种情况</p>
 <ul>
-<li><p>sudo nano /etc/apt/sources.list<br>将内容用#注释掉，并且添加下面的内容</p>
-<blockquote>
-<p>deb <a href="http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/" target="_blank" rel="noopener">http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/</a> buster main non-free contrib<br>deb-src <a href="http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/" target="_blank" rel="noopener">http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/</a> buster main non-free contrib<br>按 ctrl-o 保存，按 ctrl-x 关闭。</p>
-</blockquote>
-</li>
-<li><p>sudo nano /etc/apt/sources.list.d/raspi.list<br>将内容用#注释掉，并且添加下面的内容</p>
-<blockquote>
-<p>deb <a href="http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/" target="_blank" rel="noopener">http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/</a> buster main ui</p>
-</blockquote>
-</li>
+<li>j-1是正常字符</li>
+<li>j-1==’.’</li>
+<li>j-1==’*‘</li>
 </ul>
+<p>对于前面两个情况，可以合并成一种情况 f[i][j] = f[i-1][j-1]</p>
+<p>对于第三种情况，对于 c* 分为看和不看两种情况</p>
+<p>不看：直接砍掉正则串的后面两个， f[i][j] = f[i][j-2]<br>看：正则串不动，主串前移一个，f[i][j] = f[i-1][j]</p>
+<h2 id="初始条件"><a href="#初始条件" class="headerlink" title="初始条件"></a>初始条件</h2><p>特判：需要考虑空串+空正则</p>
+<p>空串和空正则是匹配的，f[0][0] = truef[0][0]=true<br>空串和非空正则，不能直接定义 truetrue 和 falsefalse，必须要计算出来。（比如A=A= ‘’ ‘’ ,B=a<em>b</em>c*B=a∗b∗c∗）<br>非空串和空正则必不匹配，f[1][0]=…=f[n][0]=falsef[1][0]=…=f[n][0]=false<br>非空串和非空正则，那肯定是需要计算的了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isMatch</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m=s.size(),n=p.size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; &gt; f(m+<span class="number">1</span>,<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;(n+<span class="number">1</span>,<span class="literal">false</span>));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=n;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(j==<span class="number">0</span>)&#123;<span class="comment">//空正则</span></span><br><span class="line">                    <span class="comment">//如果是空串，true</span></span><br><span class="line">                    <span class="comment">//非空串，false</span></span><br><span class="line">                    f[i][j]=(i==<span class="number">0</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;<span class="comment">//非空正则</span></span><br><span class="line">                    <span class="keyword">if</span>(p[j<span class="number">-1</span>]!=<span class="string">'*'</span>)&#123;</span><br><span class="line">                        <span class="comment">// i-1与j-1匹配 true</span></span><br><span class="line">                        <span class="keyword">if</span>(i&gt;<span class="number">0</span>&amp;&amp;(s[i<span class="number">-1</span>]==p[j<span class="number">-1</span>]||p[j<span class="number">-1</span>]==<span class="string">'.'</span>))</span><br><span class="line">                            f[i][j]=f[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span>&#123;</span><br><span class="line">                        <span class="comment">//放弃c*</span></span><br><span class="line">                        <span class="keyword">if</span>(j&gt;=<span class="number">2</span>) f[i][j]=f[i][j]||f[i][j<span class="number">-2</span>];</span><br><span class="line">                        <span class="keyword">if</span>(i&gt;=<span class="number">1</span>&amp;&amp;j&gt;=<span class="number">2</span>&amp;&amp;(s[i<span class="number">-1</span>]==p[j<span class="number">-2</span>]||p[j<span class="number">-2</span>]==<span class="string">'.'</span>))</span><br><span class="line">                            f[i][j]=f[i][j]||f[i<span class="number">-1</span>][j];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> f[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/0-n-1中缺失的数字/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/12/0-n-1中缺失的数字/" itemprop="url">0~n-1中缺失的数字</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-12T15:43:56+08:00">
+                2020-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="o-n"><a href="#o-n" class="headerlink" title="o(n)"></a>o(n)</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">missingNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n=nums.size();</span><br><span class="line">        <span class="keyword">int</span> res;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]!=i) &#123;</span><br><span class="line">                res=i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="o-logn"><a href="#o-logn" class="headerlink" title="o(logn)"></a>o(logn)</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">missingNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n=nums.size();</span><br><span class="line">        <span class="keyword">int</span> i=helper(nums,<span class="number">0</span>,n<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">return</span> i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums,<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n=nums.size();</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums[mid]!=mid)&#123;</span><br><span class="line">                <span class="keyword">if</span>(mid==<span class="number">0</span>||nums[mid<span class="number">-1</span>]==mid<span class="number">-1</span>) </span><br><span class="line">                    <span class="keyword">return</span> mid;</span><br><span class="line">                r=mid<span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(l==n) <span class="keyword">return</span> l;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/在排序数组中查找数字-I/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/12/在排序数组中查找数字-I/" itemprop="url">在排序数组中查找数字 I</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-12T15:32:42+08:00">
+                2020-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.size()==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left=findFirst(nums,target);</span><br><span class="line">        <span class="keyword">int</span> right=findLast(nums,target);</span><br><span class="line">        <span class="keyword">return</span> left==<span class="number">-1</span>?<span class="number">0</span>:right-left+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findFirst</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums,<span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n=nums.size();</span><br><span class="line">        <span class="keyword">int</span> l=<span class="number">0</span>,r=n<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums[mid]==target) &#123;</span><br><span class="line">                <span class="keyword">if</span>(mid==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span>(nums[mid<span class="number">-1</span>]==target) r=mid<span class="number">-1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">return</span> mid;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums[mid]&gt;target) r=mid<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findLast</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums,<span class="keyword">int</span> target)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n=nums.size();</span><br><span class="line">        <span class="keyword">int</span> l=<span class="number">0</span>,r=n<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)&#123;</span><br><span class="line">            <span class="keyword">int</span> mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums[mid]==target) &#123;</span><br><span class="line">                <span class="keyword">if</span>(mid==n<span class="number">-1</span>) <span class="keyword">return</span> n<span class="number">-1</span>;</span><br><span class="line">                <span class="keyword">if</span>(nums[mid+<span class="number">1</span>]==target) l=mid+<span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">return</span> mid;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums[mid]&gt;target) r=mid<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1328,7 +1080,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/03/树莓派安装java/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/顺时针打印矩阵/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="GQ">
@@ -1347,7 +1099,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/03/树莓派安装java/" itemprop="url">树莓派安装java</a></h1>
+                <a class="post-title-link" href="/2020/05/12/顺时针打印矩阵/" itemprop="url">顺时针打印矩阵</a></h1>
         
 
         <div class="post-meta">
@@ -1359,8 +1111,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-03T21:02:11+08:00">
-                2020-05-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-12T12:29:08+08:00">
+                2020-05-12
               </time>
             
 
@@ -1399,12 +1151,247 @@
       
         
           
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="从不久前开始，Oracle-Java-已经不开放下载了，所以原有的-PPA-安装方法也已经失效。不过此-链接-有人收集了此前所有-Java-8-版本，所以有了手动安装的方法"><a href="#从不久前开始，Oracle-Java-已经不开放下载了，所以原有的-PPA-安装方法也已经失效。不过此-链接-有人收集了此前所有-Java-8-版本，所以有了手动安装的方法" class="headerlink" title="从不久前开始，Oracle Java 已经不开放下载了，所以原有的 PPA 安装方法也已经失效。不过此 链接 有人收集了此前所有 Java 8 版本，所以有了手动安装的方法"></a>从不久前开始，Oracle Java 已经不开放下载了，所以原有的 PPA 安装方法也已经失效。不过此 链接 有人收集了此前所有 Java 8 版本，所以有了手动安装的方法</h2><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>raspbian 目前只支持 32 位，所以下载 jdk-8u212-linux-arm32-vfp-hflt.tar.gz，若以后支持 64 位可以更换为 jdk-8u212-linux-arm64-vfp-hflt.tar.gz</p>
-<blockquote>
-<p>wget <a href="https://github.com/frekele/oracle-java/releases/download/8u212-b10/jdk-8u212-linux-arm32-vfp-hflt.tar.gz" target="_blank" rel="noopener">https://github.com/frekele/oracle-java/releases/download/8u212-b10/jdk-8u212-linux-arm32-vfp-hflt.tar.gz</a><br>解压，创建目录和配置</p>
-<p>tar zxvf jdk-8u212-linux-arm32-vfp-hflt.tar.gz<br>sudo mkdir /usr/share/java<br>sudo mv jdk1.8.0_212/ /usr/share/java/<br>sudo update-alternatives —install /usr/bin/java java /usr/share/java/jdk1.8.0_212/bin/java 1000<br>sudo update-alternatives —install /usr/bin/javac javac /usr/share/java/jdk1.8.0_212/bin/javac 1000<br>安装完成后 java -version 查看版本，显示</p>
-<p>java version “1.8.0_212”<br>Java(TM) SE Runtime Environment (build 1.8.0_212-b10)<br>Java HotSpot(TM) Client VM (build 25.212-b10, mixed mode)</p>
-</blockquote>
+            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; spiralOrder(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ret;</span><br><span class="line">        <span class="keyword">int</span> m=matrix.size();</span><br><span class="line">        <span class="keyword">if</span>(m==<span class="number">0</span>)<span class="keyword">return</span> ret;</span><br><span class="line">        <span class="keyword">int</span> n=matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">int</span> b=<span class="number">0</span>,t=m<span class="number">-1</span>,l=<span class="number">0</span>,r=n<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=l;j&lt;=r;j++)ret.push_back(matrix[b][j]);</span><br><span class="line">            <span class="keyword">if</span>(++b&gt;t)<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=b;i&lt;=t;i++)ret.push_back(matrix[i][r]);</span><br><span class="line">            <span class="keyword">if</span>(--r&lt;l)<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=r;j&gt;=l;j--)ret.push_back(matrix[t][j]);</span><br><span class="line">            <span class="keyword">if</span>(--t&lt;b)<span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=t;i&gt;=b;i--)ret.push_back(matrix[i][l]);</span><br><span class="line">            <span class="keyword">if</span>(++l&gt;r)<span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/12/二维数组中的查找/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/12/二维数组中的查找/" itemprop="url">二维数组中的查找</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-12T12:02:14+08:00">
+                2020-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">findNumberIn2DArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m=matrix.size();</span><br><span class="line">        <span class="keyword">if</span>(m==<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> n=matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">int</span> p=<span class="number">0</span>,q=n<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(p&lt;m&amp;&amp;q&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> e=matrix[p][q];</span><br><span class="line">            <span class="keyword">if</span>(e==target)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">else</span>  <span class="keyword">if</span>(e&gt;target) q--;</span><br><span class="line">            <span class="keyword">else</span> p++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/10/数组中重复的数字/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/10/数组中重复的数字/" itemprop="url">数组中重复的数字</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-10T23:09:50+08:00">
+                2020-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n=nums.size();</span><br><span class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&lt;<span class="number">0</span>||nums[i]&gt;=n) </span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">while</span>(nums[i]!=i)&#123;</span><br><span class="line">                <span class="comment">//不断交换位置在i和nums[i]的数字</span></span><br><span class="line">                <span class="keyword">if</span>(nums[i]==nums[nums[i]])&#123;</span><br><span class="line">                    <span class="keyword">return</span> nums[i];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">int</span> tmp=nums[i];</span><br><span class="line">                nums[i]=nums[nums[i]];</span><br><span class="line">                nums[tmp]=tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1444,7 +1431,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1490,7 +1477,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">72</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1503,7 +1490,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
