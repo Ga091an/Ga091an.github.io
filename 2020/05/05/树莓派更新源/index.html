@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="软件源软件源是指 debian 系操作系统的应用程序安装包仓库，很多的软件都会这收录到这个仓库里面。而树莓派的 raspberrypi 操作系统也是基于 debian 的，所以树莓派也有自己的软件源，用来收录各种树莓派应用程序。  sudo nano /etc/apt/sources.list将内容用#注释掉，并且添加下面的内容  deb http://mirrors.tuna.tsinghua.">
+<meta name="description" content="软件源 软件源是指 debian 系操作系统的应用程序安装包仓库，很多的软件都会这收录到这个仓库里面。而树莓派的 raspberrypi 操作系统也是基于 debian 的，所以树莓派也有自己的软件源，用来收录各种树莓派应用程序。 * sudo nano /etc/apt/sources.list 将内容用#注释掉，并且添加下面的内容 &amp;gt; deb http://mirrors.tuna.ts">
 <meta name="keywords" content="树莓派">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派更新源">
 <meta property="og:url" content="http://yoursite.com/2020/05/05/树莓派更新源/index.html">
 <meta property="og:site_name" content="谦的bolg">
-<meta property="og:description" content="软件源软件源是指 debian 系操作系统的应用程序安装包仓库，很多的软件都会这收录到这个仓库里面。而树莓派的 raspberrypi 操作系统也是基于 debian 的，所以树莓派也有自己的软件源，用来收录各种树莓派应用程序。  sudo nano /etc/apt/sources.list将内容用#注释掉，并且添加下面的内容  deb http://mirrors.tuna.tsinghua.">
+<meta property="og:description" content="软件源 软件源是指 debian 系操作系统的应用程序安装包仓库，很多的软件都会这收录到这个仓库里面。而树莓派的 raspberrypi 操作系统也是基于 debian 的，所以树莓派也有自己的软件源，用来收录各种树莓派应用程序。 * sudo nano /etc/apt/sources.list 将内容用#注释掉，并且添加下面的内容 &amp;gt; deb http://mirrors.tuna.ts">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2020-05-05T10:53:07.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派更新源">
-<meta name="twitter:description" content="软件源软件源是指 debian 系操作系统的应用程序安装包仓库，很多的软件都会这收录到这个仓库里面。而树莓派的 raspberrypi 操作系统也是基于 debian 的，所以树莓派也有自己的软件源，用来收录各种树莓派应用程序。  sudo nano /etc/apt/sources.list将内容用#注释掉，并且添加下面的内容  deb http://mirrors.tuna.tsinghua.">
+<meta name="twitter:description" content="软件源 软件源是指 debian 系操作系统的应用程序安装包仓库，很多的软件都会这收录到这个仓库里面。而树莓派的 raspberrypi 操作系统也是基于 debian 的，所以树莓派也有自己的软件源，用来收录各种树莓派应用程序。 * sudo nano /etc/apt/sources.list 将内容用#注释掉，并且添加下面的内容 &amp;gt; deb http://mirrors.tuna.ts">
 
 
 
@@ -300,18 +300,10 @@
       
 
       
-        <h1 id="软件源"><a href="#软件源" class="headerlink" title="软件源"></a>软件源</h1><p>软件源是指 debian 系操作系统的应用程序安装包仓库，很多的软件都会这收录到这个仓库里面。而树莓派的 raspberrypi 操作系统也是基于 debian 的，所以树莓派也有自己的软件源，用来收录各种树莓派应用程序。</p>
+        <h1 id="软件源">软件源</h1>
+<p>软件源是指 debian 系操作系统的应用程序安装包仓库，很多的软件都会这收录到这个仓库里面。而树莓派的 raspberrypi 操作系统也是基于 debian 的，所以树莓派也有自己的软件源，用来收录各种树莓派应用程序。 * sudo nano /etc/apt/sources.list 将内容用#注释掉，并且添加下面的内容 &gt; deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib &gt; deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main non-free contrib 按 ctrl-o 保存，按 ctrl-x 关闭。</p>
 <ul>
-<li><p>sudo nano /etc/apt/sources.list<br>将内容用#注释掉，并且添加下面的内容</p>
-<blockquote>
-<p>deb <a href="http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/" target="_blank" rel="noopener">http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/</a> buster main non-free contrib<br>deb-src <a href="http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/" target="_blank" rel="noopener">http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/</a> buster main non-free contrib<br>按 ctrl-o 保存，按 ctrl-x 关闭。</p>
-</blockquote>
-</li>
-<li><p>sudo nano /etc/apt/sources.list.d/raspi.list<br>将内容用#注释掉，并且添加下面的内容</p>
-<blockquote>
-<p>deb <a href="http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/" target="_blank" rel="noopener">http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/</a> buster main ui</p>
-</blockquote>
-</li>
+<li>sudo nano /etc/apt/sources.list.d/raspi.list 将内容用#注释掉，并且添加下面的内容 &gt; deb http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ buster main ui</li>
 </ul>
 
       
@@ -432,7 +424,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">110</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -445,7 +437,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

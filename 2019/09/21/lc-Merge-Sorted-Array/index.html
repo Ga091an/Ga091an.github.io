@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="88.Merge Sorted Array time:o((m+n)l0g(m+n))space:o(1)123456789class Solution &amp;#123;public:    void merge(vector&amp;lt;int&amp;gt;&amp;amp; nums1, int m, vector&amp;lt;int&amp;gt;&amp;amp; nums2, int n) &amp;#123;        for(int">
+<meta name="description" content="88.Merge Sorted Array  time:o((m+n)l0g(m+n)) space:o(1) 123456789class Solution &amp;#123;public:    void merge(vector&amp;lt;int&amp;gt;&amp;amp; nums1, int m, vector&amp;lt;int&amp;gt;&amp;amp; nums2, int n) &amp;#123;        for(">
 <meta name="keywords" content="leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lc-Merge Sorted Array">
 <meta property="og:url" content="http://yoursite.com/2019/09/21/lc-Merge-Sorted-Array/index.html">
 <meta property="og:site_name" content="谦的bolg">
-<meta property="og:description" content="88.Merge Sorted Array time:o((m+n)l0g(m+n))space:o(1)123456789class Solution &amp;#123;public:    void merge(vector&amp;lt;int&amp;gt;&amp;amp; nums1, int m, vector&amp;lt;int&amp;gt;&amp;amp; nums2, int n) &amp;#123;        for(int">
+<meta property="og:description" content="88.Merge Sorted Array  time:o((m+n)l0g(m+n)) space:o(1) 123456789class Solution &amp;#123;public:    void merge(vector&amp;lt;int&amp;gt;&amp;amp; nums1, int m, vector&amp;lt;int&amp;gt;&amp;amp; nums2, int n) &amp;#123;        for(">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-09-21T02:21:38.997Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lc-Merge Sorted Array">
-<meta name="twitter:description" content="88.Merge Sorted Array time:o((m+n)l0g(m+n))space:o(1)123456789class Solution &amp;#123;public:    void merge(vector&amp;lt;int&amp;gt;&amp;amp; nums1, int m, vector&amp;lt;int&amp;gt;&amp;amp; nums2, int n) &amp;#123;        for(int">
+<meta name="twitter:description" content="88.Merge Sorted Array  time:o((m+n)l0g(m+n)) space:o(1) 123456789class Solution &amp;#123;public:    void merge(vector&amp;lt;int&amp;gt;&amp;amp; nums1, int m, vector&amp;lt;int&amp;gt;&amp;amp; nums2, int n) &amp;#123;        for(">
 
 
 
@@ -300,7 +300,12 @@
       
 
       
-        <h1 id="88-Merge-Sorted-Array"><a href="#88-Merge-Sorted-Array" class="headerlink" title="88.Merge Sorted Array"></a>88.Merge Sorted Array</h1><h2 id><a href="#" class="headerlink" title=" "></a> </h2><h2 id="time-o-m-n-l0g-m-n"><a href="#time-o-m-n-l0g-m-n" class="headerlink" title="time:o((m+n)l0g(m+n))"></a>time:o((m+n)l0g(m+n))</h2><h2 id="space-o-1"><a href="#space-o-1" class="headerlink" title="space:o(1)"></a>space:o(1)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    void merge(vector&lt;int&gt;&amp; nums1, int m, vector&lt;int&gt;&amp; nums2, int n) &#123;</span><br><span class="line">        for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">            nums1[m+i]=nums2[i];</span><br><span class="line">        &#125;</span><br><span class="line">        sort(nums1.begin(),nums1.begin()+m+n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <h1 id="merge-sorted-array">88.Merge Sorted Array</h1>
+<h2 id="section"></h2>
+<h2 id="timeomnl0gmn">time:o((m+n)l0g(m+n))</h2>
+<h2 id="spaceo1">space:o(1)</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    void merge(vector&lt;int&gt;&amp; nums1, int m, vector&lt;int&gt;&amp; nums2, int n) &#123;</span><br><span class="line">        for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">            nums1[m+i]=nums2[i];</span><br><span class="line">        &#125;</span><br><span class="line">        sort(nums1.begin(),nums1.begin()+m+n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -419,7 +424,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">110</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -432,7 +437,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -465,7 +470,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#88-Merge-Sorted-Array"><span class="nav-number">1.</span> <span class="nav-text">88.Merge Sorted Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text"> </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time-o-m-n-l0g-m-n"><span class="nav-number">1.2.</span> <span class="nav-text">time:o((m+n)l0g(m+n))</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#space-o-1"><span class="nav-number">1.3.</span> <span class="nav-text">space:o(1)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#merge-sorted-array"><span class="nav-number">1.</span> <span class="nav-text">88.Merge Sorted Array</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">1.1.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#timeomnl0gmn"><span class="nav-number">1.2.</span> <span class="nav-text">time:o((m+n)l0g(m+n))</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spaceo1"><span class="nav-number">1.3.</span> <span class="nav-text">space:o(1)</span></a></li></ol></li></ol></div>
             
 
           </div>

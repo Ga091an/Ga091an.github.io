@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="docker rm -f -v textsum # -d 后台运行 # --name 为容器指定一个名称 # -v 绑定一个卷 # -p 指定端口映射，格式为：主机(宿主)端口:容器端口 docker run -d --name textsum -v ./deploy:/app -p 9002:9000 python:3.6 python /app/ts_server.py 0.0.0.0:900">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker常用命令">
+<meta property="og:url" content="http://yoursite.com/2020/08/17/docker常用命令/index.html">
+<meta property="og:site_name" content="谦的bolg">
+<meta property="og:description" content="docker rm -f -v textsum # -d 后台运行 # --name 为容器指定一个名称 # -v 绑定一个卷 # -p 指定端口映射，格式为：主机(宿主)端口:容器端口 docker run -d --name textsum -v ./deploy:/app -p 9002:9000 python:3.6 python /app/ts_server.py 0.0.0.0:900">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-08-25T01:35:16.379Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="docker常用命令">
+<meta name="twitter:description" content="docker rm -f -v textsum # -d 后台运行 # --name 为容器指定一个名称 # -v 绑定一个卷 # -p 指定端口映射，格式为：主机(宿主)端口:容器端口 docker run -d --name textsum -v ./deploy:/app -p 9002:9000 python:3.6 python /app/ts_server.py 0.0.0.0:900">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/08/17/docker常用命令/">
+
+
+
+
+
+  <title>docker常用命令 | 谦的bolg</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">谦的bolg</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/17/docker常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="GQ">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谦的bolg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">docker常用命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-17T15:37:51+08:00">
+                2020-08-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>docker rm -f -v textsum # -d 后台运行 # --name 为容器指定一个名称 # -v 绑定一个卷 # -p 指定端口映射，格式为：主机(宿主)端口:容器端口</p>
+<p>docker run -d --name textsum -v ./deploy:/app -p 9002:9000 python:3.6 python /app/ts_server.py 0.0.0.0:9000</p>
+<p>docker run -it --name textsum -v /data/gaoqian/root/deploy:/app -p 9002:9000 python:3.6 python /app/ts_server.py 0.0.0.0:9000</p>
+<p>docker run -it --name textsum -v /deploy:/app -p 9002:9000 python:3.6 /bin/bash</p>
+<p>docker run -it --name textsum -v /data/gaoqian/root/deploy:/app -p 9002:9000 python:3.6 python /app/test_js.py</p>
+<p>docker run -it --name textsum -v /data/gaoqian/root/deploy:/app -p 9002:9000 python:3.6 python /app/code_helper.py</p>
+<h1 id="test_js.py">test_js.py</h1>
+<p>docker run -it -v /data/gaoqian/root/deploy:/app python:3.6 python /app/test_js.py</p>
+<h1 id="code_helper.py">code_helper.py</h1>
+<p>docker run -it -v /data/gaoqian/root/deploy:/app python:3.6 python /app/coder_helper.py</p>
+<h1 id="d-分离模式-在后台运行">-d :分离模式: 在后台运行</h1>
+<h1 id="i-即使没有附加也保持stdin-打开">-i :即使没有附加也保持STDIN 打开</h1>
+<h1 id="t-分配一个伪终端">-t :分配一个伪终端</h1>
+<p>docker exec -it classification_class mkdir -p /textsum/textsum</p>
+<p>docker exec -it classification_target mkdir -p /textsum/textsum</p>
+<p>docker exec -it b804880f0686 python /app/code_helper.py</p>
+<p>docker exec -it b804880f0686 python /app/test_js.py</p>
+<p>docker start b804880f0686 docker exec -it b804880f0686 /bin/bash</p>
+<h1 id="也可以把docker容器内部的文件复制到本地">也可以把docker容器内部的文件复制到本地</h1>
+<p>docker cp python:/path/filename /path/filename</p>
+<pre><code>docker cp 258bce9dda38:/app/summ_res.json /data/gaoqian/root/deploy/summ_res.json
+
+cp /data/gaoqian/root/deploy/fact_ts/code_helper.py /data/gaoqian/root/deploy/coder_helpr.py
+
+这么晚了打扰你啊[捂脸]你明早看就行，我今晚不说怕明天忘记。叶老师那份代码我看了，textsum(ts)的部分是从/root/deploy/fact_ts/eval_in_web.py的main函数进入的。坏消息是整个模型没有提供训练函数，好消息是fact_ts这个库内，尤其是fact_ts/ts这个库内的文件基本都沿用了OpenNMT-py这个框架，这是一个类似于fairseq的框架。这样一来我们组内后续的任务基本确定，就是把项目中有关摘要的这部分（主要在fact_ts/ts）的代码抽取出来，并进行训练，再次基础上顺便学习和体会opennmt这个框架的使用。这样训练的函数我们可能就要自己写了。训练使用的数据都在/root/workspace/data里，目前你的任务就是阅读fact_ts/ts/modelconstructor.py这个 文件中的make_base_model函数，这应该是整体函数了，阅读时间比较宽裕，可能下周或者下下周的周五会让你在组里会议上讲一下。注意的是，ts这个库内改动比较大的部分几乎都在ModelConstructor.py和Dataset.py这两个地方（设计&quot;textsum&quot;这个字符串的py文件都是根据我们项目改动的，阅读时需要注意。）阅读慢没有关系，弄清楚大致流程是关键。王筑那边我会在他完成初步的评估脚本之后再让他过来做这个。opennmt的案例git上有很多，我这周也会抽空一起看这个.py文件。
+
+--bridge: This is an additional layer that uses the final hidden state of the encoder as input and computes an initial hidden state for the decoder. Without this, the decoder is initialized with the final hidden state of the encoder directly.</code></pre>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/29/NMT-DEMO的构建/" rel="next" title="NMT-DEMO的构建">
+                <i class="fa fa-chevron-left"></i> NMT-DEMO的构建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/08/17/零碎问题/" rel="prev" title="零碎问题">
+                零碎问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">GQ</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">110</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#test_js.py"><span class="nav-number">1.</span> <span class="nav-text">test_js.py</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code_helper.py"><span class="nav-number">2.</span> <span class="nav-text">code_helper.py</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#d-分离模式-在后台运行"><span class="nav-number">3.</span> <span class="nav-text">-d :分离模式: 在后台运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#i-即使没有附加也保持stdin-打开"><span class="nav-number">4.</span> <span class="nav-text">-i :即使没有附加也保持STDIN 打开</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#t-分配一个伪终端"><span class="nav-number">5.</span> <span class="nav-text">-t :分配一个伪终端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#也可以把docker容器内部的文件复制到本地"><span class="nav-number">6.</span> <span class="nav-text">也可以把docker容器内部的文件复制到本地</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">GQ</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

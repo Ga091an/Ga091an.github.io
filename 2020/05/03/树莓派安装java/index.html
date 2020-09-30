@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前言从不久前开始，Oracle Java 已经不开放下载了，所以原有的 PPA 安装方法也已经失效。不过此 链接 有人收集了此前所有 Java 8 版本，所以有了手动安装的方法步骤raspbian 目前只支持 32 位，所以下载 jdk-8u212-linux-arm32-vfp-hflt.tar.gz，若以后支持 64 位可以更换为 jdk-8u212-linux-arm64-vfp-hflt.">
+<meta name="description" content="前言 从不久前开始，Oracle Java 已经不开放下载了，所以原有的 PPA 安装方法也已经失效。不过此 链接 有人收集了此前所有 Java 8 版本，所以有了手动安装的方法 步骤 raspbian 目前只支持 32 位，所以下载 jdk-8u212-linux-arm32-vfp-hflt.tar.gz，若以后支持 64 位可以更换为 jdk-8u212-linux-arm64-vfp-hf">
 <meta name="keywords" content="树莓派">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派安装java">
 <meta property="og:url" content="http://yoursite.com/2020/05/03/树莓派安装java/index.html">
 <meta property="og:site_name" content="谦的bolg">
-<meta property="og:description" content="前言从不久前开始，Oracle Java 已经不开放下载了，所以原有的 PPA 安装方法也已经失效。不过此 链接 有人收集了此前所有 Java 8 版本，所以有了手动安装的方法步骤raspbian 目前只支持 32 位，所以下载 jdk-8u212-linux-arm32-vfp-hflt.tar.gz，若以后支持 64 位可以更换为 jdk-8u212-linux-arm64-vfp-hflt.">
+<meta property="og:description" content="前言 从不久前开始，Oracle Java 已经不开放下载了，所以原有的 PPA 安装方法也已经失效。不过此 链接 有人收集了此前所有 Java 8 版本，所以有了手动安装的方法 步骤 raspbian 目前只支持 32 位，所以下载 jdk-8u212-linux-arm32-vfp-hflt.tar.gz，若以后支持 64 位可以更换为 jdk-8u212-linux-arm64-vfp-hf">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2020-05-10T15:11:25.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树莓派安装java">
-<meta name="twitter:description" content="前言从不久前开始，Oracle Java 已经不开放下载了，所以原有的 PPA 安装方法也已经失效。不过此 链接 有人收集了此前所有 Java 8 版本，所以有了手动安装的方法步骤raspbian 目前只支持 32 位，所以下载 jdk-8u212-linux-arm32-vfp-hflt.tar.gz，若以后支持 64 位可以更换为 jdk-8u212-linux-arm64-vfp-hflt.">
+<meta name="twitter:description" content="前言 从不久前开始，Oracle Java 已经不开放下载了，所以原有的 PPA 安装方法也已经失效。不过此 链接 有人收集了此前所有 Java 8 版本，所以有了手动安装的方法 步骤 raspbian 目前只支持 32 位，所以下载 jdk-8u212-linux-arm32-vfp-hflt.tar.gz，若以后支持 64 位可以更换为 jdk-8u212-linux-arm64-vfp-hf">
 
 
 
@@ -300,11 +300,18 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h2 id="从不久前开始，Oracle-Java-已经不开放下载了，所以原有的-PPA-安装方法也已经失效。不过此-链接-有人收集了此前所有-Java-8-版本，所以有了手动安装的方法"><a href="#从不久前开始，Oracle-Java-已经不开放下载了，所以原有的-PPA-安装方法也已经失效。不过此-链接-有人收集了此前所有-Java-8-版本，所以有了手动安装的方法" class="headerlink" title="从不久前开始，Oracle Java 已经不开放下载了，所以原有的 PPA 安装方法也已经失效。不过此 链接 有人收集了此前所有 Java 8 版本，所以有了手动安装的方法"></a>从不久前开始，Oracle Java 已经不开放下载了，所以原有的 PPA 安装方法也已经失效。不过此 链接 有人收集了此前所有 Java 8 版本，所以有了手动安装的方法</h2><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>raspbian 目前只支持 32 位，所以下载 jdk-8u212-linux-arm32-vfp-hflt.tar.gz，若以后支持 64 位可以更换为 jdk-8u212-linux-arm64-vfp-hflt.tar.gz</p>
+        <h1 id="前言">前言</h1>
+<h2 id="从不久前开始oracle-java-已经不开放下载了所以原有的-ppa-安装方法也已经失效不过此-链接-有人收集了此前所有-java-8-版本所以有了手动安装的方法">从不久前开始，Oracle Java 已经不开放下载了，所以原有的 PPA 安装方法也已经失效。不过此 链接 有人收集了此前所有 Java 8 版本，所以有了手动安装的方法</h2>
+<h2 id="步骤">步骤</h2>
+<p>raspbian 目前只支持 32 位，所以下载 jdk-8u212-linux-arm32-vfp-hflt.tar.gz，若以后支持 64 位可以更换为 jdk-8u212-linux-arm64-vfp-hflt.tar.gz</p>
 <blockquote>
-<p>wget <a href="https://github.com/frekele/oracle-java/releases/download/8u212-b10/jdk-8u212-linux-arm32-vfp-hflt.tar.gz" target="_blank" rel="noopener">https://github.com/frekele/oracle-java/releases/download/8u212-b10/jdk-8u212-linux-arm32-vfp-hflt.tar.gz</a><br>解压，创建目录和配置</p>
-<p>tar zxvf jdk-8u212-linux-arm32-vfp-hflt.tar.gz<br>sudo mkdir /usr/share/java<br>sudo mv jdk1.8.0_212/ /usr/share/java/<br>sudo update-alternatives —install /usr/bin/java java /usr/share/java/jdk1.8.0_212/bin/java 1000<br>sudo update-alternatives —install /usr/bin/javac javac /usr/share/java/jdk1.8.0_212/bin/javac 1000<br>安装完成后 java -version 查看版本，显示</p>
-<p>java version “1.8.0_212”<br>Java(TM) SE Runtime Environment (build 1.8.0_212-b10)<br>Java HotSpot(TM) Client VM (build 25.212-b10, mixed mode)</p>
+<p>wget https://github.com/frekele/oracle-java/releases/download/8u212-b10/jdk-8u212-linux-arm32-vfp-hflt.tar.gz 解压，创建目录和配置</p>
+</blockquote>
+<blockquote>
+<p>tar zxvf jdk-8u212-linux-arm32-vfp-hflt.tar.gz sudo mkdir /usr/share/java sudo mv jdk1.8.0_212/ /usr/share/java/ sudo update-alternatives --install /usr/bin/java java /usr/share/java/jdk1.8.0_212/bin/java 1000 sudo update-alternatives --install /usr/bin/javac javac /usr/share/java/jdk1.8.0_212/bin/javac 1000 安装完成后 java -version 查看版本，显示</p>
+</blockquote>
+<blockquote>
+<p>java version &quot;1.8.0_212&quot; Java(TM) SE Runtime Environment (build 1.8.0_212-b10) Java HotSpot(TM) Client VM (build 25.212-b10, mixed mode)</p>
 </blockquote>
 
       
@@ -425,7 +432,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">72</span>
+                  <span class="site-state-item-count">110</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -438,7 +445,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
@@ -471,7 +478,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从不久前开始，Oracle-Java-已经不开放下载了，所以原有的-PPA-安装方法也已经失效。不过此-链接-有人收集了此前所有-Java-8-版本，所以有了手动安装的方法"><span class="nav-number">1.1.</span> <span class="nav-text">从不久前开始，Oracle Java 已经不开放下载了，所以原有的 PPA 安装方法也已经失效。不过此 链接 有人收集了此前所有 Java 8 版本，所以有了手动安装的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">1.2.</span> <span class="nav-text">步骤</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#从不久前开始oracle-java-已经不开放下载了所以原有的-ppa-安装方法也已经失效不过此-链接-有人收集了此前所有-java-8-版本所以有了手动安装的方法"><span class="nav-number">1.1.</span> <span class="nav-text">从不久前开始，Oracle Java 已经不开放下载了，所以原有的 PPA 安装方法也已经失效。不过此 链接 有人收集了此前所有 Java 8 版本，所以有了手动安装的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">1.2.</span> <span class="nav-text">步骤</span></a></li></ol></li></ol></div>
             
 
           </div>
